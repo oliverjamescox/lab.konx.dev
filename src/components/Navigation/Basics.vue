@@ -4,8 +4,8 @@
         <div @click="accordionToggle()" class="transition duration-200 uppercase relative font-bold cursor-pointer text-white py-4 px-8 text-center hover:bg-green" :class="isExpanded ? 'bg-green' : null">Basics</div>
         
         <ul class="text-center text-white" :class="isExpanded ? 'visible' : 'hidden'">
-          <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey"><router-link to="/basics/overview">Overview</router-link></li>
-          <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">item 2</li>
+          <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey"><router-link to="/basics/state">State, Computed &amp; Methods</router-link></li>
+          <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey"><router-link to="/basics/binding">Binding</router-link></li>
           <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">item 3</li>
           <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">item 4</li>
           <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">item 5</li>

@@ -1,5 +1,7 @@
-const Overview = () => import('../../views/Sets/Basics/Overview.vue');
+const State = () => import('../../views/Sets/Basics/State.vue');
+const Binding = () => import('../../views/Sets/Basics/Binding.vue');
 
 export default [
-    { path: '/basics/overview', component: Overview }
+    { path: '/basics/state', component: State },
+    { path: '/basics/binding', component: Binding },
 ];

@@ -24,6 +24,7 @@ module.exports = {
         lighter: '#67C69C',
       },
       blue: '#34495E',
+      red: 'red',
     },
     extend: {},
   },
