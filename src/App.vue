@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="relative">
     <global-navigation></global-navigation>
-    <div class="bg-grey-light w-screen h-full">
-      <div class="container mx-auto p-20 bg-white h-screen">
+    <div class="bg-grey-light w-full h-full min-h-screen">
+      <div class="container mx-auto p-8 md:p-12 lg:p-20 bg-white h-full">
         <router-view />
       </div>
     </div>

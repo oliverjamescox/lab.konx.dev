@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green" :class="{ 'open' : isOpen }">
+    <div class="invisible lg:visible navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green" :class="{ 'open' : isOpen }">
       <div @click="navToggle()" class="w-12 relative cursor-pointer">
-        <div class="vue-title text-white font-body absolute">vuelab</div>
+        <div class="vue-title hidden lg:block text-white font-body absolute">vuelab</div>
         <div class="navigation__icon absolute" :class="{ 'open' : isOpen }">
           <div class="inner transition duration-700 absolute">
             <font-awesome-icon class="chevron chevron--one text-lg" :icon="['fas', 'chevron-left']" />
@@ -54,6 +54,8 @@ export default {
     
     &__bar {
       transform: translateX(300px);
+    
+      z-index: 5;
       
       &.open {
         transform: translateX(0);

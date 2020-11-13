@@ -26,3 +26,53 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+//code blocks
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid $green;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace !important;
+    line-height: 1.6;
+    max-width: 100%;
+    padding: 1em 1.5em;
+    display: block;
+	word-wrap: break-word;
+	position: relative;
+
+	&:after {
+		content: 'example';
+		background: $green;
+		color: white;
+		position: absolute;
+		font-weight: bold;
+		font-size: 10px;
+		text-transform: uppercase;
+		bottom: 0;
+		right: 10px;
+		font-family: 'Montserrat';
+		padding: 5px 10px;
+		border-radius: 5px 5px 0 0;
+
+	}
+}
+
+//button
+.btn {
+	background: $green;
+	color: $white;
+	padding: 0.5rem 1.5rem;
+	border-radius: 5px;
+	font-size: 12px;
+	font-weight: $bold;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		background: $green--darker;
+	}
+}
+
