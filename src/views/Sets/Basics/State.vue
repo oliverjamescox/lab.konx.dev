@@ -9,43 +9,48 @@
             </ul>
       </div>
       <h2 class="text-2xl text-black font-bold mb-4">Examples</h2>
-      <div class="mb-8">
+      <div class="mb-12">
           <h3 class="font-bold text-xl mb-2">Simple Count</h3>
           <p class="mb-4">Count is a variable on the current component, the computed in this example (countDoubled) watches for updates to the count to then update, on this occasion it's a simple way of doubling the current count and outputting to the user. Lastly the button has a click event that runs the method that increases the count by 1.</p>
-          <div class="flex flex-col md:flex-row items-center">
+          <div class="flex flex-col md:flex-row items-center mb-4">
               <button class="btn mb-4 md:mr-4 md:mb-0" @click="increment()">increase</button>
-              Count: {{ state.count }} | Count (doubled): {{ state.countDoubled }}
-          </div>
-      </div>
-      <!-- <div class="mb-10">
-          <pre>
-              <code >
-const state = reactive({
-  count: 0,
-  countDoubled: computed(() => state.count * 2)
-})
-              </code>
-            </pre>
-      </div> -->
-      <div>
-          <h3 class="font-bold text-xl mb-2">Passing parameters / arguments to a function</h3>
-          <p class="mb-4">Another example is passing information to a function for that to be used as part of the output, for this example I will used a variable in the current state and pass it into a function, this returns a string with a simple message using the provided variable for the name.</p>
-          <div class="mb-6">
-              <span class="border border-grey px-6 py-2 inline-block">"{{ userGreeting(state.username) }}"</span>
+              count: {{ data.count }} | countDoubled: {{ data.countDoubled }}
           </div>
           <div>
-            <pre>
+            <pre class="">
                 <code >
-userGreeting(state.username)
+const data = reactive({
+  count: 0,
+  countDoubled: computed(() => data.count * 2)
+})
+
+function increment() {
+  data.count++
+}
                 </code>
               </pre>
           </div>
+      </div>
+      
+      <div class="mb-12">
+          <h3 class="font-bold text-xl mb-2">Passing parameters / arguments to a function</h3>
+          <p class="mb-4">Passing information to a function for that to be used as part of the output, by using a variable in the current state and passing it into a function, this returns a string with a simple message using the provided variable for the name.</p>
           <div>
-            <pre>
+            <pre class="">
                 <code >
-const state = reactive({
+const data = reactive({
   username: 'Oliver',
 })
+
+function userGreeting(param) {
+  return `Hello ${param}!`
+}
+
+// Usage
+userGreeting(data.username)
+
+// Output
+{{ userGreeting(data.username) }}
                 </code>
               </pre>
           </div>
@@ -58,14 +63,14 @@ import { reactive, computed } from 'vue'
 
 export default {
   setup() {
-    const state = reactive({
+    const data = reactive({
       count: 0,
       username: 'Oliver',
-      countDoubled: computed(() => state.count * 2)
+      countDoubled: computed(() => data.count * 2)
     })
 
     function increment() {
-      state.count++
+      data.count++
     }
 
     function userGreeting(param) {
@@ -73,7 +78,7 @@ export default {
     }
 
     return {
-      state,
+      data,
       increment,
       userGreeting,
     }

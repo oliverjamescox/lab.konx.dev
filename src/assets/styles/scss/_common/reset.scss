@@ -32,9 +32,10 @@ table {
 pre {
     background: #f4f4f4;
     border: 1px solid #ddd;
-    border-left: 3px solid $green;
+    border-left: 3px solid $green--darker;
     color: #666;
-    page-break-inside: avoid;
+	page-break-inside: avoid;
+	overflow: scroll;
     font-family: monospace !important;
     line-height: 1.6;
     max-width: 100%;
@@ -42,10 +43,11 @@ pre {
     display: block;
 	word-wrap: break-word;
 	position: relative;
+	margin: 25px 0 !important;
 
 	&:after {
 		content: 'example';
-		background: $green;
+		background: $green--darker;
 		color: white;
 		position: absolute;
 		font-weight: bold;
@@ -56,7 +58,15 @@ pre {
 		font-family: 'Montserrat';
 		padding: 5px 10px;
 		border-radius: 5px 5px 0 0;
+	}
 
+	&.function {
+		border-left: 3px solid $purple;
+
+		&:after {
+			content: 'output';
+			background: $purple;
+		}
 	}
 }
 
