@@ -5,7 +5,7 @@
         
         <ul class="text-center cursor-pointer text-white" :class="isExpanded ? 'visible' : 'hidden'">
           <router-link to="/basics/state"><li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">State, Computed &amp; Methods</li></router-link>
-          <router-link to="/basics/data-binding"><li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">Data Binding</li></router-link>
+          <router-link to="/basics/binding"><li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">Data &amp; Class Binding</li></router-link>
           <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">item 3</li>
           <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">item 4</li>
           <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">item 5</li>
