@@ -12,8 +12,9 @@
       </div>
       <div class="navigation__sidebar bg-green-lighter">
         <div class="text-white text-center py-12">search component here..</div>
-        <basics />
         <vue3-features />
+        <basics />
+        <plugins />
       </div>
     </div>
   </div>
@@ -23,6 +24,7 @@
 <script>
 import Vue3Features from "../Navigation/Vue3Features.vue";
 import Basics from "../Navigation/Basics.vue";
+import Plugins from "../Navigation/Plugins.vue";
 
 export default {
   name: "global-navigation",
@@ -39,6 +41,7 @@ export default {
   components: {
     'vue3-features': Vue3Features,
     'basics': Basics,
+    'plugins': Plugins,
   }
 };
 </script>

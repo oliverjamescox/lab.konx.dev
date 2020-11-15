@@ -43,7 +43,7 @@ v-html="websiteTag"
                 We can pass an object to :class (short for v-bind:class) to dynamically toggle classes. You can have multiple classes toggled by having more fields in the object. In addition, the :class directive can also co-exist with the plain class attribute. The below code example is inline.
             </p>
             <div>
-              <pre class="">
+              <pre>
                 <code >
 :class="{ 'active' : isActive }"
 
@@ -51,8 +51,34 @@ v-html="websiteTag"
                 </code>
               </pre>
           </div>
-          <p>The above syntax means if the data property of isActive evaluates to true the class active will be added to the element.</p>
+          <p class="mb-4">The above syntax means if the data property of isActive evaluates to true the class active will be added to the element.</p>
+          <p>If there are multiple classes rather than inlining they can be passed as a object or an array.</p>
+          <div :class="data.classObject">
+              <pre :class="data.classArray">
+                <code >
+const data = reactive({
+  classObject: {
+    'class-object': true,
+    'another-class-object': true,
+  },
+  classArray: ['class-one class-two class-three'],
+})
+
+:class="data.classObject" // element example
+                </code>
+              </pre>
+          </div>
+          <h3 class="font-bold text-xl mb-2">Ternary Conditional</h3>
+          <p>The above example renders a class or doesn't, using a ternary provides an additional usecase to have a class depending on the condition being either true or false.</p>
+          <div>
+              <pre>
+                <code >
+:class="isActive ? 'active' : 'not-active'"
+                </code>
+              </pre>
+          </div>
       </div>
+      
   </div>
 </template>
 
@@ -60,9 +86,15 @@ v-html="websiteTag"
 import { reactive } from 'vue'
 
 export default {
+
   setup() {
     const data = reactive({
       websiteUrl: 'https://konx.dev',
+      classObject: {
+        'class-object': true,
+        'another-class-object': true,
+      },
+      classArray: ['class-one class-two class-three'],
     })
 
     return {
