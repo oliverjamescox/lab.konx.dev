@@ -73,16 +73,24 @@ const data = reactive({
           <div>
               <pre>
                 <code >
-:class="isActive ? 'active' : 'not-active'"
+:class="data.isActive ? 'active' : 'not-active'"
+
+:class="[data.isActive ? 'active' : 'not-active', 'class']" // multiples
                 </code>
               </pre>
           </div>
       </div>
-      
+      <div>
+        <h2 class="text-2xl text-black font-bold mb-4">Examples</h2>
+        <h3 class="font-bold text-xl mb-2">User Status</h3>
+        <user-status></user-status>
+      </div>
   </div>
 </template>
 
 <script>
+import UserStatus from "../../../components/Basics/UserStatus.vue"
+
 import { reactive } from 'vue'
 
 export default {
@@ -90,6 +98,7 @@ export default {
   setup() {
     const data = reactive({
       websiteUrl: 'https://konx.dev',
+      isActive: true,
       classObject: {
         'class-object': true,
         'another-class-object': true,
@@ -99,6 +108,7 @@ export default {
 
     return {
       data,
+      'user-status' : UserStatus,
     }
   }
 }
