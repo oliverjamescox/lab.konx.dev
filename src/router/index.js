@@ -19,4 +19,13 @@ const router = createRouter({
   routes,
 })
 
+// move navigation to vuex
+// router.beforeEach(() => {
+//   let el = document.getElementById('navigation')
+
+//   if (el) {
+//     el.classList.remove('open')
+//   }
+// })
+
 export default router

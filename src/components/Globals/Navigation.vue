@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="invisible lg:visible navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green" :class="{ 'open' : isOpen }">
+    <div id="navigation" class="invisible lg:visible navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green" :class="{ 'open' : isOpen }">
       <div @click="navToggle()" class="w-12 relative cursor-pointer">
         <div class="vue-title hidden lg:block text-white font-body absolute">vuelab</div>
         <div class="navigation__icon absolute" :class="{ 'open' : isOpen }">

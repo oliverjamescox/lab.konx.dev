@@ -38,6 +38,20 @@ v-html="websiteTag"
       </div>
       <div class="mb-8">
             
+            <h2 class="text-2xl text-black font-bold mb-4">Two-way Data Binding</h2>
+            <p>
+              info here
+            </p>
+            <div>
+              <pre class="">
+                <code >
+// two-way data binding example
+                </code>
+              </pre>
+          </div>    
+      </div>
+      <div class="mb-8">
+            
             <h2 class="text-2xl text-black font-bold mb-4">Class Binding</h2>
             <p>
                 We can pass an object to :class (short for v-bind:class) to dynamically toggle classes. You can have multiple classes toggled by having more fields in the object. In addition, the :class directive can also co-exist with the plain class attribute. The below code example is inline.
