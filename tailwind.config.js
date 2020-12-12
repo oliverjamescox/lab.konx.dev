@@ -14,8 +14,8 @@ module.exports = {
     },
     colors: {
       grey: {
-        default: "#475050",
-        light: "#F2F2F2",
+        default: "#323330",
+        lighter: "#F2F2F2",
       },
       black: "#000000",
       white: "#ffffff",
@@ -25,6 +25,7 @@ module.exports = {
       },
       blue: '#34495E',
       red: 'red',
+      yellow: '#f0db4f',
     },
     extend: {},
   },

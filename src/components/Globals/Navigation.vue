@@ -1,20 +1,38 @@
 <template>
   <div>
-    <div id="navigation" class="invisible lg:visible navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green" :class="{ 'open' : isOpen }">
-      <div @click="navToggle()" class="w-12 relative cursor-pointer">
-        <div class="vue-title hidden lg:block text-white font-body absolute">vuelab</div>
+    <div id="navigation" class="navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-black" :class="{ 'open' : isOpen }">
+      <div @click="navToggle()" class="w-2 relative cursor-pointer">
+        <!-- <div class="vue-title hidden lg:block text-white font-body absolute">javascriptlab</div> -->
         <div class="navigation__icon absolute" :class="{ 'open' : isOpen }">
           <div class="inner transition duration-700 absolute">
-            <font-awesome-icon class="chevron chevron--one text-lg" :icon="['fas', 'chevron-left']" />
-            <font-awesome-icon class="chevron--two text-lg -ml-1" :icon="['fas', 'chevron-left']" />
+            <template v-if="isOpen">
+              <font-awesome-icon class="text-xl" :icon="['fas', 'times']" />
+            </template>
+            <template v-else>
+              <font-awesome-icon class="text-xl" :icon="['fas', 'bars']" />
+            </template>
           </div>
         </div>
       </div>
-      <div class="navigation__sidebar bg-green-lighter">
-        <div class="text-white text-center py-12">search component here..</div>
-        <vue3-features />
-        <basics />
-        <plugins />
+      <div class="navigation__sidebar bg-grey">
+        <div class="text-white text-center py-6 md:py-10">logo here..</div>
+        <div class="border-green border-t-2 relative mt-16">
+          <div class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-green py-2 px-6" @click="vueToggle()">Vue</div>
+          <template v-if="vueOpen">
+            <vue3-features />
+            <basics />
+            <plugins />
+          </template>
+        </div>
+        <!-- <div class="border-green border-t-2 relative mt-16">
+          <div class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-green py-2 px-6" @click="jsToggle()">Javascript</div>
+          <template v-if="jsOpen">
+            <vue3-features />
+            <basics />
+            <plugins />
+          </template>
+        </div> -->
+        
       </div>
     </div>
   </div>
@@ -30,13 +48,37 @@ export default {
   name: "global-navigation",
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      vueOpen: false,
+      jsOpen: false,
     }
   },
   methods: {
     navToggle() {
       this.isOpen = !this.isOpen;
-    }  
+    },
+    vueToggle() {
+      
+      if (this.jsOpen) {
+        this.jsOpen = false;
+        
+        this.vueOpen = !this.vueOpen;
+      } else {
+        this.vueOpen = !this.vueOpen;
+      }
+
+    },
+    jsToggle() {
+
+      if (this.vueOpen) {
+        this.vueOpen = false;
+
+        this.jsOpen = !this.jsOpen;
+      } else {
+        this.jsOpen = !this.jsOpen;
+      }
+    }
+
   },
   components: {
     'vue3-features': Vue3Features,
@@ -56,7 +98,16 @@ export default {
 .navigation {
     
     &__bar {
-      transform: translateX(300px);
+      transform: translateX(100%);
+      width: 85%;
+
+      @include min-bp($sm) {
+        width: unset;
+      }
+
+      @include min-bp($md) {
+        transform: translateX(300px);
+      }
     
       z-index: 5;
       
@@ -67,30 +118,53 @@ export default {
     
     &__sidebar {
       width: 300px;
+
+      .sidebar__heading {
+        top: -30px;
+        left: 20px;
+        width: auto;
+        text-align: center;
+        border-radius: 5px 5px 0 0;
+        // transform: translateX(-50%);
+
+      }
+
     }
     
     &__icon {
       
       width: 40px;
       height: 40px;
-      transform: rotate(45deg) translate(50%,100%);
-      border-radius: 5px;
-      background: #41B883;
+      top: 30px;
+      left: -40px;
+
+
+      // transform: rotate(45deg) translate(50%,100%);
+      border-radius: 5px 0 0 5px;
+      background: $black;
       
       .inner {
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%,-50%) rotate(-45deg);
+        // top: 25px;
+        // left: 7px;
+        // transform: rotate(-45deg);
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%) rotate(-45deg);
-        color: white;
+        transform: translate(-40%,-50%);
+        color: $white;
+
+        
         
       }
       
-      &.open {
+      // &.open {
         
-        .inner {
-          transform: translate(-50%,-50%) rotate(135deg);
-        }
-      }
+      //   .inner {
+      //     transform: rotate(135deg);
+      //   }
+      // }
       
     }
 }
