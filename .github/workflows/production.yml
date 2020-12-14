@@ -35,7 +35,7 @@ jobs:
       - name: Lighthouse Audit
         uses: treosh/lighthouse-ci-action@v3
         with:
-          urls: 'https://vuelab.konx.dev/'
+          urls: 'https://www.google.com/'
           budgetPath: '.github/lighthouse/budget.json'
           uploadArtifacts: true
           temporaryPublicStorage: true
