@@ -27,15 +27,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: npm run build
-      
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Lighthouse Audit
-        uses: treosh/lighthouse-ci-action@v3
-        with:
-          urls: 'https://oliverjamescox.com/'
-          budgetPath: '.github/lighthouse/budget.json'
-          uploadArtifacts: true
-          temporaryPublicStorage: true
