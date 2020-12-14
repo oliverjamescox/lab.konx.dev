@@ -27,16 +27,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i
     - run: npm run build
-
-  audit:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Lighthouse Audit
-      uses: jakejarvis/lighthouse-action@master
-      with:
-        url: 'https://vuelab.konx.dev/'
-    - name: Upload results
-      uses: actions/upload-artifact@master
-      with:
-        name: report
-        path: './report'
