@@ -3,20 +3,10 @@ module.exports = {
       "collect": {
         "numberOfRuns": 3
       },
-      "assert": {
-        "preset": "lighthouse:recommended",
-        "assertions": {
-          "first-contentful-paint": [
-            "error",
-            {"maxNumericValue": 2000, "aggregationMethod": "optimistic"}
-          ],
-          "interactive": ["error", {"maxNumericValue": 5000, "aggregationMethod": "optimistic"}]
-        }
-      },
       "upload": {
         "target": "lhci",
         "serverBaseUrl": "https://lighthouse.konx.dev",
-        "token": "${{ secrets.LIGHTHOUSE_TOKEN }}"
+        "token": "0e56b860-0c9a-4c6d-8c81-5e2ea2fa3048"
       }
     }
 }
