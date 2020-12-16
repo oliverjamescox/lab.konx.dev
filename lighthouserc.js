@@ -15,7 +15,8 @@ module.exports = {
       },
       "upload": {
         "target": "lhci",
-        "serverBaseUrl": "https://lighthouse.konx.dev"
+        "serverBaseUrl": "https://lighthouse.konx.dev",
+        "token": ${{ LIGHTHOUSE_TOKEN }}
       }
     }
 }
