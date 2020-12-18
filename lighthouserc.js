@@ -5,6 +5,9 @@ module.exports = {
         "url": [
           "https://vuelab.konx.dev/",
         ],
+        "settings": {
+          "emulatedFormFactor": "mobile",
+        },
       },
       assert: {
         "assertions": {
