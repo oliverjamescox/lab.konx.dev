@@ -7,7 +7,14 @@ module.exports = {
         ],
       },
       assert: {
-        preset: 'lighthouse:no-pwa',
+        "assertions": {
+          "categories:performance": ["warn", {"minScore": 0.8}],
+          "categories:accessibility": ["warn", {"minScore": 1}],
+          "categories:best-practices": ["warn", {"minScore": 0.8}],
+          "categories:seo": ["warn", {"minScore": 1}],
+          "categories:pwa": "off",
+
+        }
       },
       "upload": {
         "target": "lhci",
