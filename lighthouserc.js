@@ -1,7 +1,13 @@
 module.exports = {
     "ci": {
       "collect": {
-        "numberOfRuns": 3
+        "numberOfRuns": 3,
+        "url": [
+          "https://vuelab.konx.dev/",
+        ],
+      },
+      assert: {
+        preset: 'lighthouse:no-pwa',
       },
       "upload": {
         "target": "lhci",
