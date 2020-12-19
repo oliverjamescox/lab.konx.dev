@@ -6,9 +6,13 @@ on:
 
 jobs:
 
-  echo:
+  echo test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Echo a string
         run: echo "This is a string"
+      - name: Echo a secret
+        env:
+          LI_USER: ${{ secrets.LI_USER }}
+        run: echo "$LI_USER"
