@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Echo a string
         run: echo "This is a string"
-      - name: Echo a secret
+      - name: Echo a github secret
         env:
           LI_USER: ${{ secrets.LI_USER }}
         run: echo "$LI_USER"
