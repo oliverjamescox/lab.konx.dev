@@ -1,8 +1,8 @@
-name: reviewdog
+name: eslint
 on: [pull_request]
 jobs:
   eslint:
-    name: runner / eslint
+    name: eslint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -11,3 +11,4 @@ jobs:
         with:
           reporter: github-pr-review
           eslint_flags: 'src/'
+          fail_on_error: true
