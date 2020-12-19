@@ -7,6 +7,7 @@ on:
 jobs:
 
   echo:
+    name: GitHub Secrets
     runs-on: ubuntu-latest
 
     steps:
@@ -15,6 +16,20 @@ jobs:
           LI_USER: ${{ secrets.LI_USER }}
         run: echo "$LI_USER"
   
+  runnercheck:
+    name: Checking GitHub runner IP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Collect IP
+        id: ip
+        uses: haythem/public-ip@v1.2
+
+      - name: Print IP
+        run: |
+          echo ${{ steps.ip.outputs.ipv4 }}
+          echo ${{ steps.ip.outputs.ipv6 }}
+          
   lhci:
     name: Lighthouse Audit
     runs-on: ubuntu-latest
