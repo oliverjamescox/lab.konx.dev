@@ -25,4 +25,3 @@ function test() {
 
   test();
   test2();
-  f();
