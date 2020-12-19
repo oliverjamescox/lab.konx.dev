@@ -1,0 +1,14 @@
+name: Workflow Test
+
+on:
+  push:
+    branches: [ test ]
+
+jobs:
+
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo a string
+        run: echo "This is a string"
