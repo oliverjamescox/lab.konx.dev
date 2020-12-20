@@ -2,9 +2,9 @@ module.exports = {
     "ci": {
       "collect": {
         "numberOfRuns": 3,
-        // "url": [
-        //   "https://vuelab.konx.dev/",
-        // ],
+        "url": [
+          "https://vuelab.konx.dev/",
+        ],
       },
       assert: {
         "assertions": {
