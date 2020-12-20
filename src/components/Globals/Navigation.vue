@@ -1,23 +1,41 @@
 <template>
   <div>
-    <div class="navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green" :class="{ 'open' : isOpen }">
-      <div class="w-12 relative cursor-pointer" @click="navToggle()">
-        <div class="vue-title text-white font-body absolute">vuelab</div>
-        <div class="navigation__icon absolute" :class="{ 'open' : isOpen }">
+    <div
+      class="navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green"
+      :class="{ 'open' : isOpen }"
+    >
+      <div
+        class="w-12 relative cursor-pointer"
+        @click="navToggle()"
+      >
+        <div class="vue-title text-white font-body absolute">
+          vuelab
+        </div>
+        <div
+          class="navigation__icon absolute"
+          :class="{ 'open' : isOpen }"
+        >
           <div class="inner transition duration-700 absolute">
-            <font-awesome-icon class="chevron chevron--one text-lg" :icon="['fas', 'chevron-left']" />
-            <font-awesome-icon class="chevron--two text-lg -ml-1" :icon="['fas', 'chevron-left']" />
+            <font-awesome-icon
+              class="chevron chevron--one text-lg"
+              :icon="['fas', 'chevron-left']"
+            />
+            <font-awesome-icon
+              class="chevron--two text-lg -ml-1"
+              :icon="['fas', 'chevron-left']"
+            />
           </div>
         </div>
       </div>
       <div class="navigation__sidebar bg-green-lighter">
-        <div class="text-white text-center py-12">search component here..</div>
+        <div class="text-white text-center py-12">
+          search component here..
+        </div>
         <basics />
         <vue3-features />
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -25,7 +43,7 @@ import Vue3Features from "../Navigation/Vue3Features.vue";
 import Basics from "../Navigation/Basics.vue";
 
 export default {
-  name: "global-navigation",
+  name: "GlobalNavigation",
   data() {
     return {
       isOpen: false,
