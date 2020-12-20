@@ -42,7 +42,7 @@ jobs:
       - name: npm install, build
         run: |
           npm install
-          npm run build
+          npm run build --modern
       - name: run Lighthouse CI
         env:
           LI_USER: ${{ secrets.LI_USER }}

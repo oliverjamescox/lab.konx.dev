@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-green" :class="{ 'open' : isOpen }">
-      <div @click="navToggle()" class="w-12 relative cursor-pointer">
+      <div class="w-12 relative cursor-pointer" @click="navToggle()">
         <div class="vue-title text-white font-body absolute">vuelab</div>
         <div class="navigation__icon absolute" :class="{ 'open' : isOpen }">
           <div class="inner transition duration-700 absolute">
@@ -28,13 +28,14 @@ export default {
   name: "global-navigation",
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      var: null,
     }
   },
   methods: {
     navToggle() {
       this.isOpen = !this.isOpen;
-    }  
+    }
   },
   components: {
     'vue3-features': Vue3Features,
