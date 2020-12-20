@@ -32,7 +32,7 @@ jobs:
           
   lhci:
     name: Lighthouse Audit
-    runs-on: [self-hosted, lighthouse]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 10.x
@@ -43,5 +43,4 @@ jobs:
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.6.x
-          export LHCI_BUILD_CONTEXT__CURRENT_BRANCH=test
           lhci autorun
