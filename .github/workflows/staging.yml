@@ -1,0 +1,37 @@
+# Action fired on pull request for staging
+# Builds in production and deploys / Lighthouse audit ran against new deployment
+
+name: Staging Workflow
+
+on:
+  pull_request:
+    branches: [ staging ]
+
+jobs:
+  
+  build:
+    name: Staging Deployment
+    runs-on: [self-hosted, staging]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    - run: npm i
+    - run: npm run build
+          
+  # lhci:
+  #   name: Lighthouse Audit
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Use Node.js 10.x
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 10.x
+
+  #     - name: run Lighthouse CI
+  #       run: |
+  #         npm install -g @lhci/cli@0.6.x
+  #         lhci autorun --collect.url="https://staging.vuelab.konx.dev/"

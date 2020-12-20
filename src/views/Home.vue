@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    HOMEPAGE!
+    STAGING DEPLOYMENT (HOMEPAGE)
   </div>
 </template>
 
