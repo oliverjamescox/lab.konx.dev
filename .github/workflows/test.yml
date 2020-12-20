@@ -41,12 +41,14 @@ jobs:
         with:
           node-version: 10.x
 
-      - name: Establish Runner address
-        id: ip 
+      - name: Collect IP
+        id: ip
         uses: haythem/public-ip@v1.2
+
+      - name: Print IP
         run: |
-          echo ipv4 - ${{ steps.ip.outputs.ipv4 }}
-          echo ipv6 - ${{ steps.ip.outputs.ipv6 }} 
+          echo ${{ steps.ip.outputs.ipv4 }}
+          echo ${{ steps.ip.outputs.ipv6 }}
 
       - name: run Lighthouse CI
         run: |
