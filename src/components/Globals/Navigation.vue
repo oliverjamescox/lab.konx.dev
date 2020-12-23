@@ -17,21 +17,29 @@
       <div class="navigation__sidebar bg-grey">
         <div class="text-white text-center py-6 md:py-10">logo here..</div>
         <div class="border-green border-t-2 relative mt-16">
-          <div class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-green py-2 px-6" @click="vueToggle()">Vue</div>
+          <div class="sidebar__heading cursor-pointer absolute text-grey font-bold uppercase text-sm bg-green py-2 px-6" @click="vueToggle()">Vue</div>
           <template v-if="vueOpen">
             <vue3-features />
             <basics />
             <plugins />
           </template>
         </div>
-        <!-- <div class="border-green border-t-2 relative mt-16">
-          <div class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-green py-2 px-6" @click="jsToggle()">Javascript</div>
+        <div class="border-yellow border-t-2 relative mt-16">
+          <div class="sidebar__heading cursor-pointer absolute text-grey font-bold uppercase text-sm bg-yellow py-2 px-6" @click="jsToggle()">JavaScript</div>
           <template v-if="jsOpen">
             <vue3-features />
             <basics />
             <plugins />
           </template>
-        </div> -->
+        </div>
+        <div class="border-blue border-t-2 relative mt-16">
+          <div class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-blue py-2 px-6" @click="tsToggle()">TypeScript</div>
+          <template v-if="tsOpen">
+            <vue3-features />
+            <basics />
+            <plugins />
+          </template>
+        </div>
         
       </div>
     </div>
@@ -51,6 +59,7 @@ export default {
       isOpen: false,
       vueOpen: false,
       jsOpen: false,
+      tsOpen: false,
     }
   },
   methods: {
@@ -72,10 +81,22 @@ export default {
 
       if (this.vueOpen) {
         this.vueOpen = false;
+        this.tsOpen = false;
 
         this.jsOpen = !this.jsOpen;
       } else {
         this.jsOpen = !this.jsOpen;
+      }
+    },
+    tsToggle() {
+
+      if (this.vueOpen) {
+        this.vueOpen = false;
+        this.jsOpen = false;
+
+        this.tsOpen = !this.tsOpen;
+      } else {
+        this.tsOpen = !this.tsOpen;
       }
     }
 
@@ -124,7 +145,7 @@ export default {
         left: 20px;
         width: auto;
         text-align: center;
-        border-radius: 5px 5px 0 0;
+        // border-radius: 5px 5px 0 0;
         // transform: translateX(-50%);
 
       }

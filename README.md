@@ -1,6 +1,6 @@
 # Vuelab
 
-This is a frontend only vue project, to use as a point of reference and for component development.
+This is a basic frontend only Vue project, to quickly get started with Vue & Tailwind.
 
 This now uses Vue 3 and was built using Vue CLI. 
 
