@@ -1,6 +1,9 @@
 <template>
-  <div id="app" class="relative">
-    <global-navigation></global-navigation>
+  <div
+    id="app"
+    class="relative"
+  >
+    <global-navigation />
     <div class="bg-grey-light w-screen h-full">
       <div class="container mx-auto p-20 bg-white h-screen">
         <router-view />
