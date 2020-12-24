@@ -8,15 +8,18 @@
       <div class="container mx-auto p-6 md:p-12 lg:p-20 bg-white h-full">
         <router-view />
       </div>
+      <holding-page></holding-page>
     </div>
   </div>
 </template>
 
 <script>
+import HoldingPage from './components/Globals/HoldingPage.vue';
 import Navigation from "./components/Globals/Navigation.vue";
 export default {
   components: {
     "global-navigation": Navigation,
+    'holding-page' : HoldingPage,
   }
 };
 </script>

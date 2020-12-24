@@ -36,7 +36,7 @@
         </div>
         <div class="border-green border-t-2 relative mt-16">
           <div
-            class="sidebar__heading cursor-pointer absolute text-grey font-bold uppercase text-sm bg-green py-2 px-6"
+            class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-green py-2 px-6"
             @click="vueToggle()"
           >
             Vue
