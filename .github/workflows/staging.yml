@@ -34,4 +34,4 @@ jobs:
   #     - name: run Lighthouse CI
   #       run: |
   #         npm install -g @lhci/cli@0.6.x
-  #         lhci autorun --collect.url="https://staging.vuelab.konx.dev/"
+  #         lhci autorun --collect.url="https://staging.lab.konx.dev/"
