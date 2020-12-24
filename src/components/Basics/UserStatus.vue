@@ -1,16 +1,22 @@
 <template>
-    <button class="border border-black py-2 px-8" @click="userToggle($event)">
-        <span class="ml-4 relative" :class="!data.userState ? 'panel__message' : 'panel__message--active' " >
-            user is {{ data.userMessage }}
-        </span>
-    </button>
+  <button
+    class="border border-black py-2 px-8"
+    @click="userToggle($event)"
+  >
+    <span
+      class="ml-4 relative"
+      :class="!data.userState ? 'panel__message' : 'panel__message--active' "
+    >
+      user is {{ data.userMessage }}
+    </span>
+  </button>
 </template>
 <script>
 
 import { reactive } from 'vue'
 
 export default {
-    name: 'user-status',
+    name: 'UserStatus',
 
     setup() {
         const data = reactive({
