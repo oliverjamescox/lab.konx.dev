@@ -1,37 +1,43 @@
 <template>
-  <div class="font-display text-sm mb-2">
+  <div class="font-display text-sm">
     <div class="nav-block">
       <div
         @click="accordionToggle()"
-        class="transition duration-200 uppercase relative font-bold cursor-pointer text-white py-4 px-8 text-center hover:bg-green"
+        class="transition duration-200 uppercase relative font-bold text-sm cursor-pointer text-white py-3 px-6 text-left hover:bg-green"
         :class="isExpanded ? 'bg-green' : null"
       >
         Basics
       </div>
         
       <ul
-        class="text-center text-white"
+        class="text-left cursor-pointer text-white"
         :class="isExpanded ? 'visible' : 'hidden'"
       >
-        <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">
-          <router-link to="/basics/state">
+        <router-link to="/basics/state">
+          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
             State, Computed &amp; Methods
-          </router-link>
-        </li>
-        <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">
-          <router-link to="/basics/binding">
-            Binding
-          </router-link>
-        </li>
-        <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">
-          item 3
-        </li>
-        <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">
-          item 4
-        </li>
-        <li class="nav-block__child py-4 px-2 cursor-pointer transition duration-200 hover:bg-grey-light hover:text-grey">
-          item 5
-        </li>
+          </li>
+        </router-link>
+        <router-link to="/basics/binding">
+          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+            Data &amp; Class Binding
+          </li>
+        </router-link>
+        <router-link to="/basics/events">
+          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+            Events
+          </li>
+        </router-link>
+        <router-link to="/">
+          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+            ?
+          </li>
+        </router-link>
+        <router-link to="/">
+          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+            ?
+          </li>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -56,14 +62,13 @@ export default {
 
 <style lang="scss" scoped>
 
-.nav-block {
-    border-bottom: 2px solid #41B883;
-    border-top: 2px solid #41B883;
+// .nav-block {
+//     border-top: 2px solid $yellow;
     
     
-    &__child {
-        border-top: 1px solid #41B883;
-    }
-}
+//     &__child {
+//         border-top: 1px solid $yellow;
+//     }
+// }
   
 </style>

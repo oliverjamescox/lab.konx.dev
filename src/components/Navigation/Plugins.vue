@@ -3,39 +3,39 @@
     <div class="nav-block">
       <div
         @click="accordionToggle()"
-        class="transition duration-200 uppercase relative text-sm font-bold cursor-pointer text-white py-3 px-6 text-left hover:bg-green"
+        class="transition duration-200 text-sm uppercase relative font-bold cursor-pointer text-white py-3 px-6 text-left hover:bg-green"
         :class="isExpanded ? 'bg-green' : null"
       >
-        New with Vue 3
+        Plugins
       </div>
         
       <ul
-        class="text-left text-white"
+        class="text-left cursor-pointer text-white"
         :class="isExpanded ? 'visible' : 'hidden'"
       >
-        <router-link to="/vue3-features/overview">
+        <router-link to="/">
           <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            Overview
+            Vue Router 4
           </li>
         </router-link>
         <router-link to="/">
           <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 2
+            Vuex
           </li>
         </router-link>
         <router-link to="/">
           <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 3
+            Apollo
           </li>
         </router-link>
         <router-link to="/">
           <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 4
+            Axios
           </li>
         </router-link>
         <router-link to="/">
           <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 5
+            ?
           </li>
         </router-link>
       </ul>
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  name: "Vue3Features",
+  name: "Plugins",
   data() {
     return {
         isExpanded: false,
@@ -63,16 +63,13 @@ export default {
 <style lang="scss" scoped>
 
 // .nav-block {
-//     border-top: 1px solid $grey--lighter;
+//     border-bottom: 2px solid $yellow;
+//     border-top: 2px solid $yellow;
     
     
 //     &__child {
-//         border-top: 1px solid $white;
+//         border-top: 1px solid $yellow;
 //     }
 // }
-
-.text-is-black {
-  color: $black;
-}
   
 </style>
