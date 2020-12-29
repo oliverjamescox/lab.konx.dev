@@ -11,11 +11,11 @@
         To listen for events such as clicks we can use the v-on directive, or the @ symbol for short, with the purpose to then run some JavaScript when triggered. Data attributes can be updated on clicks but I personally pass in a method for readability.
       </p>
       <div>
-        <pre class="">
-                <code>
-v-on:click="methodName"
+        <pre v-highlightjs>
+                <code class="javascript">
+  v-on:click="methodName"
 
-@click="methodName"
+  @click="methodName"
                 </code>
               </pre>
       </div>
@@ -26,13 +26,13 @@ v-on:click="methodName"
         You can also pass the variable of $event into the method to recieve information about the dom element such as positioning, classlists and the type of event it is.
       </p>
       <div>
-        <pre class="">
-                <code>
-@click="methodName($event)"
+        <pre v-highlightjs>
+                <code class="javascript">
+  @click="methodName($event)"
 
-methodName(event) {
-  console.log(event);
-}
+  methodName(event) {
+    console.log(event);
+  }
                 </code>
               </pre>
       </div>
@@ -53,22 +53,22 @@ methodName(event) {
         <li><strong>.passive</strong> - tbc</li>
       </ul>
       <div>
-        <pre class="">
-                <code>
-// modifiers can be chained
-v-on:click.stop.prevent="doThat"
-                </code>
-              </pre>
+        <pre v-highlightjs>
+          <code class="javascript">
+  // modifiers can be chained
+  v-on:click.stop.prevent="doThat"
+          </code>
+        </pre>
       </div>
       <p>Order matters when using modifiers because the relevant code is generated in the same order.</p>
       <div>
-        <pre class="">
-                <code>
-// prevents all clicks
-v-on:click.prevent.self
+        <pre v-highlightjs>
+                <code class="javascript">
+  // prevents all clicks
+  v-on:click.prevent.self
 
-// will only prevent clicks on the element itself
-v-on:click.self.prevent
+  // will only prevent clicks on the element itself
+  v-on:click.self.prevent
                 </code>
               </pre>
       </div>
@@ -81,11 +81,11 @@ v-on:click.self.prevent
         click, dblclick, scroll etc.
       </p>
       <div>
-        <pre class="">
-                <code>
-// mouse events
-                </code>
-              </pre>
+        <pre v-highlightjs>
+          <code class="javascript">
+  // mouse events
+          </code>
+        </pre>
       </div>
     </div>
     <div class="mb-8">
@@ -96,11 +96,11 @@ v-on:click.self.prevent
         keyup keydown etc.
       </p>
       <div>
-        <pre class="">
-                <code>
-// keyboard events
-                </code>
-              </pre>
+        <pre v-highlightjs>
+          <code class="javascript">
+  // keyboard events
+          </code>
+        </pre>
       </div>
     </div>
   </div>

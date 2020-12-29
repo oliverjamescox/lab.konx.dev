@@ -36,16 +36,16 @@
         count: {{ data.count }} | countDoubled: {{ data.countDoubled }}
       </div>
       <div>
-        <pre class="">
-                <code>
-const data = reactive({
-  count: 0,
-  countDoubled: computed(() => data.count * 2)
-})
+        <pre v-highlightjs>
+                <code class="javascript">
+  const data = reactive({
+    count: 0,
+    countDoubled: computed(() => data.count * 2)
+  })
 
-function increment() {
-  data.count++
-}
+  function increment() {
+    data.count++
+  }
                 </code>
               </pre>
       </div>
@@ -59,21 +59,21 @@ function increment() {
         Passing information to a function for that to be used as part of the output, by using a variable in the current state and passing it into a function, this returns a string with a simple message using the provided variable for the name.
       </p>
       <div>
-        <pre class="">
-                <code>
-const data = reactive({
-  username: 'Oliver',
-})
+        <pre v-highlightjs>
+                <code class="javascript">
+  const data = reactive({
+    username: 'Oliver',
+  })
 
-function userGreeting(param) {
-  return `Hello ${param}!`
-}
+  function userGreeting(param) {
+    return `Hello ${param}!`
+  }
 
-// Usage
-userGreeting(data.username)
+  // Usage
+  userGreeting(data.username)
 
-// Output
-{{ userGreeting(data.username) }}
+  // Output
+  {{ userGreeting(data.username) }}
                 </code>
               </pre>
       </div>

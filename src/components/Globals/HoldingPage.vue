@@ -1,13 +1,18 @@
 <template>
   <div class="holding-page__container">
-        <div class="flex flex-col justify-center items-center w-full h-full text-white uppercase">
-          <font-awesome-icon
-                class="text-4xl holding-page__logo"
-                :icon="['fab', 'vuejs']"
-           />
-          <div class="my-10 text-lg">site under construction</div>
-          <a class="underline relative z-10 hover:text-green text-sm" href="https://github.com/oliverjamescox/lab.konx.dev">github repo</a>
-        </div>
+    <div class="flex flex-col justify-center items-center w-full h-full text-white uppercase">
+      <font-awesome-icon
+        class="text-4xl holding-page__logo"
+        :icon="['fab', 'vuejs']"
+      />
+      <div class="my-10 text-lg">
+        site under construction
+      </div>
+      <a
+        class="underline relative z-10 hover:text-green text-sm"
+        href="https://github.com/oliverjamescox/lab.konx.dev"
+      >github repo</a>
+    </div>
   </div>
 </template>
 <script>
