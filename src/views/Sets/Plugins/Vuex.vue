@@ -22,7 +22,7 @@
         <li>Create a folder called <strong>store</strong> within the src folder and create a file titled store.js.</li>
         <li>In the newly create file import the required files i.e <strong>import Vue from 'vue'</strong> and <strong>import Vuex from 'vuex'</strong>.</li>
         <li>Have the application be able to use vuex with the line <strong>Vue.use(Vuex)</strong> or chain to the createApp. (1)</li>
-        <li>Declare a new variable to hold the store as seen below (2).</li>
+        <li>Declare a new store as per the documentation.</li>
         <li>With the store now declared the components can access this central store without having to be passed as props from the parent component.</li>
       </ul>
       <div>
@@ -38,15 +38,17 @@
       <div>
         <pre v-highlightjs>
             <code class="javascript">
-    export const store = new Vuex.Store({ // 2.
-        state: {
-            companyInformation: [
-                { name: 'Telephone', value: 0712345543},
-                { name: 'Email', value: 'user@vuex.com'},
-                { name: 'Forename', value: 'Oliver'},
-                { name: 'Surname', value: 'James'}
-            ]
-        }
+    import { createStore } from 'vuex'
+
+    export default createStore({
+      state: {
+        companyInfo: [
+          { name: 'Forename', value: 'Oliver'},
+          { name: 'Surname', value: 'James'},
+          { name: 'Telephone', value: '0712 345 543'},
+          { name: 'Email', value: 'user@vuex.com'},
+        ]
+      }
     })
             </code>
         </pre>
@@ -104,9 +106,26 @@
             }
         }
     }
+
+    import { computed } from 'vue'
+    import { useStore } from 'vuex'
+
+    export default {
+        name: 'CompanyInfo',
+
+        setup() {
+            const store = useStore()
+            const companyInformation = computed(() => store.state.companyInformation)
+            return {
+                companyInformation
+            }
+      }
+    }
                 </code>
               </pre>
       </div>
+      <p class="mb-4">Below is a simple component utilising a vuex store as outlined above.</p>
+      <company-info type="state"></company-info>
     </div>
     <div class="mb-8">
       <h2 class="text-2xl text-black font-bold mb-4">
@@ -116,7 +135,7 @@
         Can be considered as computed properties for the store, re-usable blocks of functionality that can be used site wide, i.e a discount function, apply % to all rather than each component having the code written each time.
       </p>
       <p>
-        To use the getter, add a computed property to the component and update the variable in the v-for loop to use the new computed property, the below example takes an existing object, maps over it and on each item adds asterix's.
+        To use the getter, add a computed property to the component and update the variable in the v-for loop to use the new computed property, the below example takes an existing object, maps over it and on each item adds asterix's to the value.
       </p>
       <div>
         <pre v-highlightjs>
@@ -126,8 +145,8 @@
         companyInformation: state => {
             let companyInformation = state.companyInformation.map( item => {
                 return {
-                    name: '* ' + item.name + ' *',
-                    value: '* ' + item.value + ' *'
+                    name: item.name,
+                    value: '**' + item.value + '**'
                 }
             });
             return companyInformation
@@ -150,6 +169,7 @@
             </code>
         </pre>
       </div>
+      <company-info type="getters"></company-info>
     </div>
     <div class="mb-8">
       <h2 class="text-2xl text-black font-bold mb-4">
@@ -431,9 +451,10 @@
 
 <script>
 import { reactive } from 'vue'
+import CompanyInfo from '../../../components/Globals/CompanyInfo.vue'
 
 export default {
-
+  
   setup() {
     const data = reactive({
     })
@@ -441,7 +462,10 @@ export default {
     return {
       data,
     }
-  }
+  },
+    components: { 
+      'company-info' : CompanyInfo 
+    },
 }
 
 </script>
