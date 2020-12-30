@@ -97,7 +97,7 @@
         &lt;div&gt;item.name - item.value&lt;/div&gt;
     &lt;/div&gt;
 
-    // script
+    // script (vue 2)
     export default {
         computed: {
             companyInformation() {
@@ -107,6 +107,7 @@
         }
     }
 
+    // script (vue 3)
     import { computed } from 'vue'
     import { useStore } from 'vuex'
 
@@ -124,8 +125,8 @@
                 </code>
               </pre>
       </div>
-      <p class="mb-4">Below is a simple component utilising a vuex store as outlined above.</p>
-      <company-info type="state"></company-info>
+      <p class="mb-4">Below is a component utilising a vuex store for the companyInformation object outputting the globally available data.</p>
+      <company-info type="state" :button="data.false"></company-info>
     </div>
     <div class="mb-8">
       <h2 class="text-2xl text-black font-bold mb-4">
@@ -158,18 +159,26 @@
         &lt;div&gt;item.name - item.value&lt;/div&gt;
     &lt;/div&gt;
 
-    // script
+    // script (vue 3, vue 2 example used in a previous section)
+    import { computed } from 'vue'
+    import { useStore } from 'vuex'
+
     export default {
-        computed: {
-            updatedCompanyInformation() {
-                return this.$store.getters.companyInformation
+        name: 'CompanyInfo',
+
+        setup() {
+            const store = useStore()
+            const companyInformation = computed(() => store.getters.companyInformation)
+            return {
+                companyInformation
             }
-        }
+      }
     }
             </code>
         </pre>
       </div>
-      <company-info type="getters"></company-info>
+      <p class="mb-4">Below the component is user a getter that takes the companyInformation object and maps over it, adding on asterix's to the value as a visual example to show the data has been changed, the original state object exists as it did and hasn't been changed or mutated.</p>
+      <company-info type="getters" :button="data.false"></company-info>
     </div>
     <div class="mb-8">
       <h2 class="text-2xl text-black font-bold mb-4">
@@ -199,18 +208,25 @@
         &lt;button v-on:click="addString"&gt;Add String&lt;/button&gt;
     &lt;/div&gt;
 
-    // script
+    // script (vue 3, vue 2 example used in a previous section)
+    import { computed } from 'vue'
+    import { useStore } from 'vuex'
+
     export default {
-        computed: {
-            companyInformation() {
-                return this.$store.state.companyInformation
+        name: 'CompanyInfo',
+
+        setup() {
+            const store = useStore()
+            const companyInformation = computed(() => store.state.companyInformation)
+
+            function addString() {
+              store.mutations.commit('addString');
             }
-        },
-        methods: {
-            addString: function() {
-                this.$store.commit('addString');
+
+            return {
+                companyInformation
             }
-        }
+      }
     }
                 </code>
               </pre>
@@ -457,6 +473,8 @@ export default {
   
   setup() {
     const data = reactive({
+      true: true,
+      false: false,
     })
 
     return {

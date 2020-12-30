@@ -7,10 +7,11 @@ Have left in but commented out the variables I would of used should it have been
 
 <template>
   <div>
-    <ul class="border border-b py-2 px-4">
+    <ul class="border border-b border-dashed py-2 px-4">
         <li class="my-2" v-for="item in companyInformation()" :key="item.id">
             <span class="font-bold pr-1">{{ item.name }}:</span> {{ item.value }}
         </li>
+        <button v-if="data.buttonState">Mutate Data</button>
     </ul>
   </div>
 </template>
@@ -23,7 +24,8 @@ export default {
     name: 'CompanyInfo',
 
     props: {
-        type: String
+        type: String,
+        button: Boolean,
     },
 
     setup(props) {
@@ -31,7 +33,7 @@ export default {
         // const companyInformation = computed(() => store.state.companyInformation)
         // const updatedCompanyInfo = computed(() => store.getters.companyInformation)
         const data = reactive({
-            forcedType: null
+            buttonState: props.button,
         })
 
         function companyInformation() {

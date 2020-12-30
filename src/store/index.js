@@ -21,6 +21,11 @@ export default createStore({
     }
   },
   mutations: {
+    addString: state => {
+        state.companyInformation.forEach( item => {
+            item.name + ' -- a string';
+        })
+    }
   },
   actions: {
   },
