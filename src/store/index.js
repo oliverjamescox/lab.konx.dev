@@ -22,15 +22,22 @@ export default createStore({
   },
   mutations: {
     addStringMutation: state => {
-
       state.companyInformation.forEach( item => {
         item.value = item.value + ' -- a string'
+      })
+    },
+    addStringUniqueMutation: (state, payload) => {
+      state.companyInformation.forEach( item => {
+        item.value = item.value + ' - ' + payload
       })
     }
   },
   actions: {
     addStringAction: context => {
       context.commit('addStringMutation')
+    },
+    addStringUniqueAction: (context, payload) => {
+      context.commit('addStringUniqueMutation', payload)
     }
   },
   modules: {

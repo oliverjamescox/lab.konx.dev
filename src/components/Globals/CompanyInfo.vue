@@ -11,7 +11,11 @@ Have left in but commented out the variables I would of used should it have been
         <li class="my-2" v-for="item in companyInformation()" :key="item.id">
             <span class="font-bold pr-1">{{ item.name }}:</span> {{ item.value }}
         </li>
-        <button class="btn" v-if="data.buttonState" v-on:click="mutationType()">Mutate Data</button>
+        <button class="btn" v-if="data.buttonState" v-on:click="mutationType()">{{ data.mutationType === 'action' ? 'Action ' : 'Mutate '}}Data</button>
+        <div v-if="data.uniqueString" class="mt-8 mb-2">
+            <input class="border border-black p-2" v-model="data.message" placeholder="edit me">
+            <button class="border py-2 px-4 text-white" :class="data.message.length > 0 ? 'pointer-events-auto bg-green border-green' : 'pointer-events-none bg-red border-red' "  v-on:click="mutationTypeCustom(data.message)">Update</button>
+        </div>
     </ul>
   </div>
 </template>
@@ -33,6 +37,11 @@ export default {
             type: Boolean,
             default: false,
             required: false,
+        },
+        uniqueString: {
+            type: Boolean,
+            default: false,
+            required: false,
         }
     },
 
@@ -40,6 +49,9 @@ export default {
         const store = useStore()
         const data = reactive({
             buttonState: props.button,
+            mutationType: props.type,
+            message: '',
+            uniqueString: props.uniqueString,
         })
 
         // Standard Global vuex state call
@@ -51,13 +63,11 @@ export default {
 
         // Standard Vuex Mutation
         // function addStringMutation() {
-        //     console.log('mutation');
         //     store.commit('addStringMutation');
         // }
 
         // Standard Vuex Action
         // function addStringAction() {
-        //     console.log('action');
         //     store.dispatch('addStringAction');
         // }
 
@@ -75,11 +85,21 @@ export default {
 
         function mutationType() {
             if (props.type === "mutation") {
-                console.log('mutation');
+                console.log('vuex mutation used')
                 return store.commit('addStringMutation');
             } else {
-                console.log('action');
+                console.log('vuex action used')
                 return store.dispatch('addStringAction');
+            }
+        }
+
+        function mutationTypeCustom(string) {
+            if (props.type === "mutation") {
+                console.log('vuex custom mutation used')
+                return store.commit('addStringUniqueMutation', string)
+            } else {
+                console.log('vuex custom action used')
+                return store.dispatch('addStringUniqueAction', string);
             }
         }
 
@@ -87,6 +107,7 @@ export default {
             data,
             companyInformation,
             mutationType,
+            mutationTypeCustom,
         }
   }
 }

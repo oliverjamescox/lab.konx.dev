@@ -27,49 +27,6 @@ table {
 	border-spacing: 0;
 }
 
-
-//code blocks
-// pre {
-//     background: #f4f4f4;
-//     border: 1px solid #ddd;
-//     border-left: 3px solid $green--darker;
-//     color: #666;
-// 	page-break-inside: avoid;
-// 	overflow: scroll;
-//     font-family: monospace !important;
-//     line-height: 1.6;
-//     max-width: 100%;
-//     padding: 1em 1.5em;
-//     display: block;
-// 	word-wrap: break-word;
-// 	position: relative;
-// 	margin: 25px 0 !important;
-
-// 	&:after {
-// 		content: 'example';
-// 		background: $green--darker;
-// 		color: white;
-// 		position: absolute;
-// 		font-weight: bold;
-// 		font-size: 10px;
-// 		text-transform: uppercase;
-// 		bottom: 0;
-// 		right: 10px;
-// 		font-family: 'Montserrat';
-// 		padding: 5px 10px;
-// 		border-radius: 5px 5px 0 0;
-// 	}
-
-// 	&.function {
-// 		border-left: 3px solid $purple;
-
-// 		&:after {
-// 			content: 'output';
-// 			background: $purple;
-// 		}
-// 	}
-// }
-
 //button
 .btn {
 	background: $green;
@@ -84,5 +41,14 @@ table {
 	&:hover {
 		background: $green--darker;
 	}
+}
+
+//debug
+.tbc {
+	background: red;
+	font-weight: $bold;
+	text-transform: uppercase;
+	color: $white;
+	padding: 10px 20px;
 }
 
