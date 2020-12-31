@@ -21,13 +21,17 @@ export default createStore({
     }
   },
   mutations: {
-    addString: state => {
-        state.companyInformation.forEach( item => {
-            item.name + ' -- a string';
-        })
+    addStringMutation: state => {
+
+      state.companyInformation.forEach( item => {
+        item.value = item.value + ' -- a string'
+      })
     }
   },
   actions: {
+    addStringAction: context => {
+      context.commit('addStringMutation')
+    }
   },
   modules: {
   }

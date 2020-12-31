@@ -11,7 +11,7 @@
         Library for vue to handle state management, state being the data we use in the project with vuex being globally accessible to all components and preventing the need for passing state up / down components via props or events.
       </p>
       <p>
-        Mostly useful for larger projects and those with a lot of shared data, vuex creates a centralised store that can be accessed by all components, known as a single source of truth.
+        Mostly useful for larger projects and those with a lot of shared data, vuex creates a centralised store that can be accessed by all components, known as a single source of truth. This store can be accessed and updated, affecting all existing references application wide.
       </p>
     </div>
     <div class="mb-8">
@@ -20,9 +20,9 @@
       </h2>
       <ul class="list-disc pl-6">
         <li>Create a folder called <strong>store</strong> within the src folder and create a file titled store.js.</li>
-        <li>In the newly create file import the required files i.e <strong>import Vue from 'vue'</strong> and <strong>import Vuex from 'vuex'</strong>.</li>
+        <li>In the newly create file import the required files i.e <strong>import Vue from 'vue'</strong> and <strong>import Vuex from 'vuex'</strong> or just <strong>import { createStore } from 'vuex'</strong> in vue 3 apps (see example below).</li>
         <li>Have the application be able to use vuex with the line <strong>Vue.use(Vuex)</strong> or chain to the createApp. (1)</li>
-        <li>Declare a new store as per the documentation.</li>
+        <li>Declare a new store as per the documentation to vue 2 or 3 (vue 3 example below).</li>
         <li>With the store now declared the components can access this central store without having to be passed as props from the parent component.</li>
       </ul>
       <div>
@@ -126,7 +126,7 @@
               </pre>
       </div>
       <p class="mb-4">Below is a component utilising a vuex store for the companyInformation object outputting the globally available data.</p>
-      <company-info type="state" :button="data.false"></company-info>
+      <company-info></company-info>
     </div>
     <div class="mb-8">
       <h2 class="text-2xl text-black font-bold mb-4">
@@ -178,7 +178,7 @@
         </pre>
       </div>
       <p class="mb-4">Below the component is user a getter that takes the companyInformation object and maps over it, adding on asterix's to the value as a visual example to show the data has been changed, the original state object exists as it did and hasn't been changed or mutated.</p>
-      <company-info type="getters" :button="data.false"></company-info>
+      <company-info type="getters"></company-info>
     </div>
     <div class="mb-8">
       <h2 class="text-2xl text-black font-bold mb-4">
@@ -188,24 +188,25 @@
         Simply put, to change the data on the store, the below example will take companyInformation and add a string after the name.
       </p>
       <p>
-        To use or 'commit a mutation' add a method to the component and call it as below, have added it to a button with a click event in order for the method to fire.
+        To use or 'commit a mutation' add a function to the component and call it, adding a button with a click event to run the function. This has mutated our inital state and scrolling back up you can see all other instances have the updated state.
       </p>
       <div>
         <pre v-highlightjs>
                 <code class="javascript">
     // code added to store const (after getters)
     mutations: {
-        addString: state => {
-            state.companyInformation.forEach( item => {
-                item.name + ' -- a string';
-            })
-        }
-    }
+      addStringMutation: state => {
+
+        state.companyInformation.forEach( item => {
+          item.value = item.value + ' -- a string'
+        })
+      }
+    },
 
     // template
     &lt;div :key="item.id" v-for="item in companyInformation">
         &lt;div&gt;item.name - item.value&lt;/div&gt;
-        &lt;button v-on:click="addString"&gt;Add String&lt;/button&gt;
+        &lt;button v-on:click="addStringMutation"&gt;Add String&lt;/button&gt;
     &lt;/div&gt;
 
     // script (vue 3, vue 2 example used in a previous section)
@@ -219,17 +220,19 @@
             const store = useStore()
             const companyInformation = computed(() => store.state.companyInformation)
 
-            function addString() {
-              store.mutations.commit('addString');
+            function addStringMutation() {
+                store.commit('addStringMutation');
             }
 
             return {
-                companyInformation
+                companyInformation,
+                addStringMutation,
             }
       }
     }
                 </code>
               </pre>
+              <company-info type="mutation" :button="data.true"></company-info>
       </div>
     </div>
     <div class="mb-8">
@@ -284,7 +287,7 @@
                 </code>
               </pre>
       </div>
-      
+      <company-info type="action" :button="data.true"></company-info>
       <h3 class="text-xl text-black font-bold mb-2">
         Standard Mutation example
       </h3>
