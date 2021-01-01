@@ -7,7 +7,10 @@ export default createStore({
       { name: 'Surname', value: 'James'},
       { name: 'Telephone', value: '0712 345 543'},
       { name: 'Email', value: 'user@vuex.com'},
-    ]
+    ],
+    conditionals: {
+      menuIsOpen: true,
+    }
   },
   getters: {
     companyInformation: state => {

@@ -32,7 +32,7 @@
       </div>
       <div class="navigation__sidebar bg-grey">
         <div class="text-white text-center py-6 md:py-10">
-          logo here..
+          logo here.. {{ isOpen }}
         </div>
         <div class="border-green border-t-2 relative mt-16">
           <div
@@ -43,8 +43,8 @@
           </div>
           <template v-if="vueOpen">
             <vue3-features />
-            <basics />
-            <plugins />
+            <basics @navCollapse="navToggle()" />
+            <plugins @navCollapse="navToggle()" />
           </template>
         </div>
         <div class="border-yellow border-t-2 relative mt-16">

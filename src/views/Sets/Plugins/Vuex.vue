@@ -249,9 +249,10 @@
         When looking to mutate store data using actions over mutations is generally preferred and considered good practice. Especially helpful with debugging unexpected state changes. In the vuex store the action now contains the <strong>context.commit</strong> (previously on the component) and the component now has a <strong>store.dispatch</strong>.
       </p>
       <h3 class="text-xl text-black font-bold my-2">
-        Context &amp; Dispatch
+        Commit &amp; Dispatch
       </h3>
-      <p><span class="tbc">tbc</span></p>
+      <p>Dispatch triggers an action whereas a commit triggers a mutation. The dispatch is asynchronous but the commit is synchronous. A dispatch should be used to prevent the user interface becoming unresponsive by the task. Dispatch in essence sends a message to the vuex store to perform an action. The action will be performed after the current tick as not to affect frontend performance, the commit is done within the action.</p>
+      <p></p>
       <div>
         <pre v-highlightjs>
                 <code class="javascript">
@@ -357,9 +358,9 @@
               <company-info :uniqueString="data.true" type="action" :button="data.true"></company-info>
       </div>
       <h3 class="text-xl text-black font-bold mt-4 mb-2">
-        Why payload?
+        Context &amp; Payload?
       </h3>
-      <p><span class="tbc">tbc</span></p>
+      <p>Contextually descriptive variables, they could just as easily be names of fruits or letters of the alphabet but are as per the official docs so should be used for readability / onboarding.</p>
     </div>
     <!-- Mapping Actions &amp; Getters -->
     <div class="mb-8">
