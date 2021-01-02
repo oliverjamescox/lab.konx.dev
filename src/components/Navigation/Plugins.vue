@@ -19,7 +19,10 @@
           </li>
         </router-link>
         <router-link to="/plugins/vuex">
-          <li @click="navCollapse()" class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+          <li
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
             Vuex
           </li>
         </router-link>
@@ -33,11 +36,6 @@
             Axios
           </li>
         </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            ?
-          </li>
-        </router-link>
       </ul>
     </div>
   </div>
@@ -46,6 +44,9 @@
 <script>
 export default {
   name: "Plugins",
+  emits: [
+    'navCollapse',
+  ],
   data() {
     return {
         isExpanded: false,

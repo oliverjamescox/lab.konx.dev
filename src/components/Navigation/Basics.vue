@@ -14,17 +14,26 @@
         :class="isExpanded ? 'visible' : 'hidden'"
       >
         <router-link to="/basics/state">
-          <li @click="navCollapse()" class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+          <li
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
             State, Computed &amp; Methods
           </li>
         </router-link>
         <router-link to="/basics/binding">
-          <li @click="navCollapse()" class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+          <li
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
             Data &amp; Class Binding
           </li>
         </router-link>
         <router-link to="/basics/events">
-          <li @click="navCollapse()" class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+          <li
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
             Events
           </li>
         </router-link>
@@ -36,6 +45,9 @@
 <script>
 export default {
   name: "Basics",
+  emits: [
+    'navCollapse',
+  ],
   data() {
     return {
         isExpanded: false,

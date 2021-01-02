@@ -8,14 +8,37 @@ Have left in but commented out the variables I would of used should it have been
 <template>
   <div>
     <ul class="border border-b border-dashed py-2 px-4">
-        <li class="my-2" v-for="item in companyInformation()" :key="item.id">
-            <span class="font-bold pr-1">{{ item.name }}:</span> {{ item.value }}
-        </li>
-        <button class="btn" v-if="data.buttonState" v-on:click="mutationType()">{{ data.mutationType === 'action' ? 'Action ' : 'Mutate '}}Data</button>
-        <div v-if="data.uniqueString" class="mt-8 mb-2">
-            <input class="border border-black p-2" v-model="data.message" placeholder="edit me">
-            <button class="border py-2 px-4 text-white" :class="data.message.length > 0 ? 'pointer-events-auto bg-green border-green' : 'pointer-events-none bg-red border-red' "  v-on:click="mutationTypeCustom(data.message)">Update</button>
-        </div>
+      <li
+        class="my-2"
+        v-for="item in companyInformation()"
+        :key="item.id"
+      >
+        <span class="font-bold pr-1">{{ item.name }}:</span> {{ item.value }}
+      </li>
+      <button
+        class="btn"
+        v-if="data.buttonState"
+        @click="mutationType()"
+      >
+        {{ data.mutationType === 'action' ? 'Action ' : 'Mutate ' }}Data
+      </button>
+      <div
+        v-if="data.uniqueString"
+        class="mt-8 mb-2"
+      >
+        <input
+          class="border border-black p-2"
+          v-model="data.message"
+          placeholder="edit me"
+        >
+        <button
+          class="border py-2 px-4 text-white bg-green border-green"
+          :class="data.message.length > 0 ? 'pointer-events-auto' : 'pointer-events-none' "
+          @click="mutationTypeCustom(data.message)"
+        >
+          Update
+        </button>
+      </div>
     </ul>
   </div>
 </template>

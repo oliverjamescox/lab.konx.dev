@@ -32,7 +32,7 @@
       </div>
       <div class="navigation__sidebar bg-grey">
         <div class="text-white text-center py-6 md:py-10">
-          logo here.. {{ isOpen }}
+          logo here..
         </div>
         <div class="border-green border-t-2 relative mt-16">
           <div
@@ -47,7 +47,7 @@
             <plugins @navCollapse="navToggle()" />
           </template>
         </div>
-        <div class="border-yellow border-t-2 relative mt-16">
+        <!-- <div class="border-yellow border-t-2 relative mt-16">
           <div
             class="sidebar__heading cursor-pointer absolute text-grey font-bold uppercase text-sm bg-yellow py-2 px-6"
             @click="jsToggle()"
@@ -59,8 +59,8 @@
             <basics />
             <plugins />
           </template>
-        </div>
-        <div class="border-blue border-t-2 relative mt-16">
+        </div> -->
+        <!-- <div class="border-blue border-t-2 relative mt-16">
           <div
             class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-blue py-2 px-6"
             @click="tsToggle()"
@@ -72,7 +72,7 @@
             <basics />
             <plugins />
           </template>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
