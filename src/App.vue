@@ -1,6 +1,6 @@
 <template>
   <div
-    id="app"
+    
     class="relative"
   >
     <global-navigation />

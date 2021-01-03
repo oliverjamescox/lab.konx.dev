@@ -96,6 +96,15 @@ export default {
   methods: {
     navToggle() {
       this.isOpen = !this.isOpen;
+
+      let element = document.body
+
+      if(element.classList.contains('overflow-hidden')) {
+        element.classList.remove('overflow-hidden');
+      } else {
+        element.classList.add('overflow-hidden');
+      }
+
     },
     vueToggle() {
       
@@ -171,6 +180,7 @@ export default {
     
     &__sidebar {
       width: 300px;
+      overflow: scroll;
 
       .sidebar__heading {
         top: -30px;
