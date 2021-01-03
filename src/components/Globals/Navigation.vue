@@ -180,7 +180,7 @@ export default {
     
     &__sidebar {
       width: 300px;
-      overflow: scroll;
+      overflow: auto;
 
       .sidebar__heading {
         top: -30px;
