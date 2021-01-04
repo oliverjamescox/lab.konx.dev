@@ -5,7 +5,7 @@
   >
     <global-navigation />
     <div class="bg-grey-lighter w-full h-full min-h-screen">
-      <div class="container mx-auto bg-white h-full">
+      <div class="">
         <router-view />
       </div>
       <!-- <holding-page></holding-page> -->

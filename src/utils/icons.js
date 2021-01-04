@@ -7,7 +7,8 @@ import {
 import {
     faTwitter,
     faInstagram,
-    faVuejs
+    faVuejs,
+    faJs
 } from "@fortawesome/free-brands-svg-icons";
 
 export default {
@@ -16,6 +17,7 @@ export default {
     faInstagram,
     faBars,
     faTimes,
-    faVuejs
+    faVuejs,
+    faJs
 }
 

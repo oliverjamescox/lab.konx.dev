@@ -1,21 +1,51 @@
 <template>
-  <div class="">
-    STAGING DEPLOYMENT (HOMEPAGE)
+  <page-hero
+    :title="data.title"
+    bg-colour="green"
+    :description="data.description"
+  />
+  <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
+    <div class="p-10 flex flex-wrap justify-evenly">
+      <page-card
+        title="Vue"
+        link="/vue"
+      />
+      <page-card
+        title="JavaScript"
+        link="/javascript"
+      />
+      <page-card
+        title="TypeScript"
+        link="/typescript"
+      />
+    </div>
+    <div>
+      component search here..
+    </div>
   </div>
 </template>
 
 <script>
+import PageHero from '../components/Page/PageHero.vue'
+import PageCard from '../components/Page/PageCard.vue'
+
+import { reactive } from 'vue'
 
 export default {
-  name: "Home",
-  data() {
+  setup() {
+    const data = reactive({
+      description: 'Collection of learning resources & components for web dev languages and frameworks.',
+      title: 'Development Lab'
+    })
+
     return {
-      selectedComponent: null,
+      data,
+      'page-hero' : PageHero,
+      'page-card' : PageCard, 
     }
-  },
-  components: {
   }
-};
+}
+
 </script>
 
 <style>

@@ -1,6 +1,9 @@
 <template>
-  <div class="text-grey leading-relaxed">
-    <page-heading title="State, Computed &amp; Methods" />
+  <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
+    <page-heading
+      title="State, Computed &amp; Methods"
+      bg-colour="green"
+    />
     <div class="p-6 md:p-12 lg:py-12 lg:px-20">
       <div class="mb-8">
         <ul class="leading-normal">

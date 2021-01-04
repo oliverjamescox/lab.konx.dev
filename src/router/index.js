@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Vue3Features from './routes/vue3-features'
 import Basics from './routes/basics'
 import Plugins from './routes/plugins'
+import Singles from './routes/singles'
 
 const routes = [
   {
@@ -11,6 +12,7 @@ const routes = [
     name: 'Home',
     component: Home,
   },
+  ...Singles,
   ...Vue3Features,
   ...Basics,
   ...Plugins,

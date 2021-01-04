@@ -1,6 +1,9 @@
 <template>
-  <div class="text-grey leading-relaxed">
-    <page-heading title="Vuex" />
+  <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
+    <page-heading
+      title="Vuex"
+      bg-colour="green"
+    />
     <div class="p-6 md:p-12 lg:py-12 lg:px-20">
       <!-- Overview -->
       <div class="mb-8">

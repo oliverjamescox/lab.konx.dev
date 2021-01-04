@@ -1,6 +1,9 @@
 <template>
-  <div class="text-grey leading-relaxed">
-    <page-heading title="Event Handling" />
+  <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
+    <page-heading
+      title="Event Handling"
+      bg-colour="green"
+    />
     <div class="p-6 md:p-12 lg:py-12 lg:px-20">
       <div class="mb-8">
         <h2 class="text-2xl text-black font-bold mb-4">

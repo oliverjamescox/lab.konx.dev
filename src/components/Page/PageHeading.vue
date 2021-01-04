@@ -1,8 +1,11 @@
 <template>
-  <div class="bg-green p-6 md:p-12 lg:px-20 lg:py-12">
-      <h1 class="font-bold text-3xl lg:text-5xl text-white">
-        {{ title }}
-      </h1>
+  <div
+    class="p-6 pr-10 md:p-12 lg:px-20 lg:py-12"
+    :class="bgColour ? 'bg-' + bgColour : 'bg-black' "
+  >
+    <h1 class="font-bold text-xl sm:text-3xl lg:text-5xl text-white">
+      {{ title }}
+    </h1>
   </div>
 </template>
 <script>
@@ -14,6 +17,11 @@ export default {
     props: {
       title: {
         type: String,
+        default: 'Page Title'
+      },
+      bgColour: {
+        type: String,
+        default: 'black',
       }
     },
     setup() {
