@@ -16,7 +16,7 @@ module.exports = {
       "upload": {
         "target": "lhci",
         "serverBaseUrl": "https://lighthouse.konx.dev",
-        "token": "0e56b860-0c9a-4c6d-8c81-5e2ea2fa3048"
+        "token": "83f6ddea-6bf8-46b5-abec-1edddb329929"
       }
     }
 }

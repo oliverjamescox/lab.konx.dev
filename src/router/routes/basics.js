@@ -3,7 +3,7 @@ const Binding = () => import('../../views/sets/Basics/Binding.vue');
 const Events = () => import('../../views/sets/Basics/Events.vue');
 
 export default [
-    { path: '/basics/state', component: State },
-    { path: '/basics/binding', component: Binding },
-    { path: '/basics/events', component: Events },
+    { path: '/vue/basics/state', component: State },
+    { path: '/vue/basics/data', component: Binding },
+    { path: '/vue/basics/events', component: Events },
 ];
