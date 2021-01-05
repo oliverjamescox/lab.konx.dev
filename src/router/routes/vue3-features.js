@@ -1,5 +1,5 @@
 const Overview = () => import('../../views/sets/Vue3Features/Overview.vue');
 
 export default [
-    { path: '/vue3-features/overview', component: Overview }
+    { path: '/vue/vue3-features/overview', component: Overview }
 ];

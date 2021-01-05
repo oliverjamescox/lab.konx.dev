@@ -1,11 +1,19 @@
 <template>
-  <router-link class="relative m-6 lg:m-0" :to="link">
+  <router-link
+    class="relative m-6 lg:m-0"
+    :class="status === 'false' ? 'pointer-events-none opacity-25' : null"
+    :to="link"
+  >
     <div class="card border border-grey-lighter flex flex-col justify-between items-center">
-      <div>logo svg here</div>
-      <div class="mb-4 p-2 w-full text-center text-grey font-bold bg-white">{{ title }}</div>
+      <img
+        class="mt-12 w-32 h-32"
+        :src="image"
+      >
+      <div class="mb-4 p-2 w-full text-center text-grey font-bold bg-white">
+        {{ title }}
+      </div>
     </div>
-    <div class="card__border" :class="bgColour ? 'bg-' + bgColour : 'bg-grey' "></div>
-    
+    <div class="card__border bg-grey" />
   </router-link>
 </template>
 <script>
@@ -15,10 +23,6 @@ import { reactive } from 'vue'
 export default {
     name: 'PageCard',
     props: {
-      bgColour: {
-          type: String,
-          default: 'grey',
-      },
       title: {
         type: String,
         required: true,
@@ -26,6 +30,14 @@ export default {
       link: {
           type: String,
           required: true,
+      },
+      image: {
+          type: String,
+          required: true,
+      },
+      status: {
+        type: String,
+        required: true,
       }
     },
     setup() {

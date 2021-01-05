@@ -17,7 +17,6 @@
     "tailwindcss": "^1.9.6",
     "vue": "^3.0.5",
     "vue-router": "^4.0.2",
-    "vue3-highlightjs": "^1.0.5",
     "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
@@ -32,7 +31,8 @@
     "eslint-plugin-vue": "^7.4.0",
     "sass-loader": "^10.1.0",
     "style-resources-loader": "^1.4.1",
-    "vue-svg-loader": "^0.17.0-beta.2"
+    "vue-svg-loader": "^0.17.0-beta.2",
+    "vue3-highlightjs": "^1.0.5"
   },
   "eslintConfig": {
     "root": true,

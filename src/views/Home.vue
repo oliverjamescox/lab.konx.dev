@@ -9,19 +9,23 @@
       <page-card
         title="Vue"
         link="/vue"
+        image="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+        status="true"
       />
       <page-card
         title="JavaScript"
         link="/javascript"
+        image="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+        status="false"
       />
       <page-card
         title="TypeScript"
         link="/typescript"
+        image="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+        status="false"
       />
     </div>
-    <div>
-      component search here..
-    </div>
+    <!-- Highlighted components, component search index to go here -->
   </div>
 </template>
 
@@ -41,7 +45,7 @@ export default {
     return {
       data,
       'page-hero' : PageHero,
-      'page-card' : PageCard, 
+      'page-card' : PageCard,
     }
   }
 }
