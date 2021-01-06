@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Vue3Features from './routes/vue3-features'
 import Basics from './routes/basics'
-import Plugins from './routes/plugins'
 import Singles from './routes/singles'
 
 const routes = [
@@ -15,7 +14,6 @@ const routes = [
   ...Singles,
   ...Vue3Features,
   ...Basics,
-  ...Plugins,
 ]
 
 const router = createRouter({
