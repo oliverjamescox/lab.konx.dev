@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
-// import Vue3Features from './routes/vue3-features'
+import Vue3Features from './routes/vue3-features'
 // import Basics from './routes/basics'
 
 const routes = [
@@ -10,8 +10,7 @@ const routes = [
     name: 'Home',
     component: Home,
   },
-  { path: '/vue/vue3-features/overview', component: () => import('../views/sets/vue3-features/Overview.vue')}
-  // ...Vue3Features,
+  ...Vue3Features,
   // ...Basics,
 ]
 
