@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
-// import Vue3Features from './routes/vue3-features'
-// import Basics from './routes/basics'
+import Vue3Features from './routes/vue3-features'
+import Basics from './routes/basics'
 
 const routes = [
   {
@@ -10,8 +10,8 @@ const routes = [
     name: 'Home',
     component: Home,
   },
-  // ...Vue3Features,
-  // ...Basics,
+  ...Vue3Features,
+  ...Basics,
 ]
 
 const router = createRouter({
