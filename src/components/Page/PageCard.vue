@@ -4,12 +4,12 @@
     :class="status === 'false' ? 'pointer-events-none opacity-25' : null"
     :to="link"
   >
-    <div class="card border border-grey-lighter flex flex-col justify-between items-center">
-      <img
+    <div class="card border border-grey-lighter flex flex-col justify-center items-center">
+      <!-- <img
         class="mt-12 w-32 h-32"
         :src="image"
-      >
-      <div class="mb-4 p-2 w-full text-center text-grey font-bold bg-white">
+      > -->
+      <div class="mb-4 p-2 w-full text-center text-grey font-bold">
         {{ title }}
       </div>
     </div>
@@ -31,10 +31,10 @@ export default {
           type: String,
           required: true,
       },
-      image: {
-          type: String,
-          required: true,
-      },
+      // image: {
+      //     type: String,
+      //     required: true,
+      // },
       status: {
         type: String,
         required: true,
