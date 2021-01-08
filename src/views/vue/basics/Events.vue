@@ -112,22 +112,17 @@
 <script>
 import { reactive } from 'vue'
 import PageHeading from '../../../components/Page/PageHeading.vue'
-
 export default {
-
   setup() {
     const data = reactive({
     })
-
     return {
       data,
       'page-heading' : PageHeading 
     }
   }
 }
-
 </script>
 
 <style lang="scss">
-
 </style>

@@ -42,7 +42,7 @@
             Vue
           </div>
           <template v-if="vueOpen">
-            <vue3-features />
+            <!-- <vue3-features /> -->
             <basics @navCollapse="navToggle()" />
             <plugins @navCollapse="navToggle()" />
           </template>
@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import Vue3Features from "../Navigation/Vue3Features.vue";
+// import Vue3Features from "../Navigation/Vue3Features.vue";
 import Basics from "../Navigation/Basics.vue";
 import Plugins from "../Navigation/Plugins.vue";
 
@@ -143,7 +143,7 @@ export default {
 
   },
   components: {
-    'vue3-features': Vue3Features,
+    // 'vue3-features': Vue3Features,
     'basics': Basics,
     'plugins': Plugins,
   }
@@ -183,7 +183,7 @@ export default {
       overflow: auto;
 
       .sidebar__heading {
-        top: -30px;
+        top: -37px;
         left: 20px;
         width: auto;
         text-align: center;
@@ -215,7 +215,7 @@ export default {
         // transform: rotate(-45deg);
         top: 50%;
         left: 50%;
-        transform: translate(-40%,-50%);
+        transform: translate(-50%,-40%);
         color: $white;
 
         

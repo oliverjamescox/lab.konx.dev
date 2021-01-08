@@ -85,9 +85,7 @@
 
 <script>
 import PageHeading from '../../../components/Page/PageHeading.vue'
-
 import { reactive, computed } from 'vue'
-
 export default {
   setup() {
     const data = reactive({
@@ -95,15 +93,12 @@ export default {
       username: 'Oliver',
       countDoubled: computed(() => data.count * 2)
     })
-
     function increment() {
       data.count++
     }
-
     function userGreeting(param) {
         return `Hello ${param}!`
     }
-
     return {
       data,
       increment,
@@ -112,9 +107,7 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss">
-
 </style>
