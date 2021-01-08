@@ -1,12 +1,12 @@
-# Vuelab
+# Development Lab
 
-This is a basic frontend only Vue project, to quickly get started with Vue & Tailwind.
+Collection of learning resources & components for web dev languages and frameworks
 
-This now uses Vue 3 and was built using Vue CLI. 
+Built with Vue 3 using Vue CLI. 
 
 The project contains:
 
-* Uses the new Vue 3 Composition API
+* The new Vue 3 Composition API
 * Global and Component SCSS
 * TailwindCSS utilising purgecss in production
 * Vue Router 4 & Vuex 4
