@@ -18,8 +18,11 @@
             Vue Router 4
           </li>
         </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+        <router-link to="/vue/plugins/vuex">
+          <li
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
             Vuex
           </li>
         </router-link>
@@ -35,7 +38,7 @@
         </router-link>
         <router-link to="/">
           <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            ?
+            Google Analytics
           </li>
         </router-link>
       </ul>
@@ -46,6 +49,9 @@
 <script>
 export default {
   name: "Plugins",
+  emits: [
+    'navCollapse',
+  ],
   data() {
     return {
         isExpanded: false,
@@ -54,6 +60,9 @@ export default {
   methods: {
       accordionToggle() {
           this.isExpanded = !this.isExpanded;
+      },
+      navCollapse() {
+        this.$emit('navCollapse');
       }
   },
   components: {}

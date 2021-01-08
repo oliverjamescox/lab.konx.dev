@@ -1,0 +1,46 @@
+{
+    "vue": {
+        "vue 3 features": {
+            "overview": {
+                "title": "Overview",
+                "url": "/vue/vue3-features/overview"
+            }
+        },
+        "basics": {
+            "state": {
+                "title": "State, Computed & Methods",
+                "url": "/vue/basics/state"
+            },
+            "data": {
+                "title": "Data & Class Binding",
+                "url": "/vue/basics/data"
+            },
+            "events": {
+                "title": "Events",
+                "url": "/vue/basics/events"
+            }
+        },
+        "plugins": {
+            "vue-router": {
+                "title": "Vue Router 4",
+                "url": "/vue/plugins/vue-router"
+            },
+            "vuex": {
+                "title": "Vuex 4",
+                "url": "/vue/plugins/vuex"
+            },
+            "apollo": {
+                "title": "Apollo",
+                "url": "/vue/plugins/apollo"
+            },
+            "axios": {
+                "title": "Axios",
+                "url": "/vue/plugins/axios"
+            },
+            "google-analytics": {
+                "title": "Google Analytics",
+                "url": "/vue/plugins/google-analytics"
+            }
+        }
+    }
+}

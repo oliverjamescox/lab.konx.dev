@@ -13,29 +13,9 @@
         class="text-left text-white"
         :class="isExpanded ? 'visible' : 'hidden'"
       >
-        <router-link to="/vue3-features/overview">
+        <router-link to="/vue/vue3-features/overview">
           <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
             Overview
-          </li>
-        </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 2
-          </li>
-        </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 3
-          </li>
-        </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 4
-          </li>
-        </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            item 5
           </li>
         </router-link>
       </ul>

@@ -43,11 +43,11 @@
           </div>
           <template v-if="vueOpen">
             <vue3-features />
-            <basics />
-            <plugins />
+            <basics @navCollapse="navToggle()" />
+            <plugins @navCollapse="navToggle()" />
           </template>
         </div>
-        <div class="border-yellow border-t-2 relative mt-16">
+        <!-- <div class="border-yellow border-t-2 relative mt-16">
           <div
             class="sidebar__heading cursor-pointer absolute text-grey font-bold uppercase text-sm bg-yellow py-2 px-6"
             @click="jsToggle()"
@@ -59,8 +59,8 @@
             <basics />
             <plugins />
           </template>
-        </div>
-        <div class="border-blue border-t-2 relative mt-16">
+        </div> -->
+        <!-- <div class="border-blue border-t-2 relative mt-16">
           <div
             class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-blue py-2 px-6"
             @click="tsToggle()"
@@ -72,7 +72,7 @@
             <basics />
             <plugins />
           </template>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -96,6 +96,15 @@ export default {
   methods: {
     navToggle() {
       this.isOpen = !this.isOpen;
+
+      let element = document.body
+
+      if(element.classList.contains('overflow-hidden')) {
+        element.classList.remove('overflow-hidden');
+      } else {
+        element.classList.add('overflow-hidden');
+      }
+
     },
     vueToggle() {
       
@@ -171,6 +180,7 @@ export default {
     
     &__sidebar {
       width: 300px;
+      overflow: auto;
 
       .sidebar__heading {
         top: -30px;
