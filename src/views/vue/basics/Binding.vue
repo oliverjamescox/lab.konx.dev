@@ -124,11 +124,8 @@
 <script>
 import UserStatus from "../../../components/Basics/UserStatus.vue"
 import PageHeading from '../../../components/Page/PageHeading.vue'
-
 import { reactive } from 'vue'
-
 export default {
-
   setup() {
     const data = reactive({
       websiteUrl: 'https://konx.dev',
@@ -139,7 +136,6 @@ export default {
       },
       classArray: ['class-one class-two class-three'],
     })
-
     return {
       data,
       'user-status' : UserStatus,
@@ -147,9 +143,7 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss">
-
 </style>
