@@ -11,6 +11,16 @@ module.exports = {
       .use('vue-svg-loader')
       .loader('vue-svg-loader');
   },
+  pluginOptions: {
+    compression:{
+      gzip: {
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        include: /\.(js|css|html|svg|json)(\?.*)?$/i,
+        minRatio: 0.8,
+      }
+    }
+  },
   css: {
     loaderOptions: {
       sass: {
