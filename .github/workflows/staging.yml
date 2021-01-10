@@ -25,18 +25,18 @@ jobs:
     - run: npm i
     - run: npm run build
           
-  lhci:
-    name: Lighthouse Audit
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 10.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
+  # lhci:
+  #   name: Lighthouse Audit
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Use Node.js 10.x
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 10.x
 
-      - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.6.x
-          lhci autorun --collect.url="https://staging.lab.konx.dev/"
+  #     - name: run Lighthouse CI
+  #       run: |
+  #         npm install -g @lhci/cli@0.6.x
+  #         lhci autorun --collect.url="https://staging.lab.konx.dev/"
