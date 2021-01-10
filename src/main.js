@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import VueGtag from "vue-gtag-next";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueHighlightJS from 'vue3-highlightjs'
@@ -16,5 +17,10 @@ createApp(App)
     .use(store)
     .use(router)
     .use(VueHighlightJS)
+    .use(VueGtag, {
+        property: {
+            id: "G-8J39MYCBC8"
+        }
+    })
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')
