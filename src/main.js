@@ -18,6 +18,7 @@ createApp(App)
     .use(router)
     .use(VueHighlightJS)
     .use(VueGtag, {
+        isEnabled: false,
         property: {
             id: "G-8J39MYCBC8"
         }
