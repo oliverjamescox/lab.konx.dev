@@ -6,6 +6,10 @@ name: Staging Workflow
 on:
   pull_request:
     branches: [ staging ]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason'
 
 jobs:
   

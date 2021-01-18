@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve"
   },
@@ -16,8 +16,10 @@
     "sass": "^1.32.0",
     "tailwindcss": "^1.9.6",
     "vue": "^3.0.0",
+    "vue-gtag-next": "^1.14.0",
     "vue-router": "^4.0.2",
-    "vuex": "^4.0.0-0"
+    "vuex": "^4.0.0-0",
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.9",
@@ -31,6 +33,7 @@
     "eslint-plugin-vue": "^7.4.0",
     "sass-loader": "^10.1.0",
     "style-resources-loader": "^1.4.1",
+    "vue-cli-plugin-compression": "~1.0.3",
     "vue-svg-loader": "^0.17.0-beta.2",
     "vue3-highlightjs": "^1.0.5"
   },
