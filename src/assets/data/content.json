@@ -26,7 +26,7 @@
                 "url": "/vue/plugins/vue-router"
             },
             "vuex": {
-                "title": "Vuex 4",
+                "title": "Vuex (4.0)",
                 "url": "/vue/plugins/vuex"
             },
             "apollo": {

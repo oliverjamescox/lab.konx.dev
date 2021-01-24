@@ -171,7 +171,7 @@ export default {
         transform: translateX(300px);
       }
     
-      z-index: 5;
+      z-index: 10;
       
       &.open {
         transform: translateX(0);

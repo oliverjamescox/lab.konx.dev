@@ -10,7 +10,7 @@
           Listening to Events
         </h2>
         <p>
-          To listen for events such as clicks we can use the v-on directive, or the @ symbol for short, with the purpose to then run some JavaScript when triggered. Data attributes can be updated on clicks but I personally pass in a method for readability.
+          To listen for events such as clicks we can use the v-on directive, or the @ symbol for short, with the purpose to then run some code when triggered. Data attributes can be updated on clicks but I personally pass in a method for readability.
         </p>
         <div>
           <pre v-highlightjs>
@@ -49,8 +49,8 @@
         <ul class="m-4">
           <li><strong>.stop</strong> - the click event's propagation will be stopped</li>
           <li><strong>.prevent</strong> - the submit event will no longer reload the page</li>
-          <li><strong>.capture</strong> - tbc</li>
-          <li><strong>.self</strong> - tbc</li>
+          <li><strong>.capture</strong> - the event listener will be added in capture mode</li>
+          <li><strong>.self</strong> - this will only trigger if the target of the event being called is the element itself</li>
           <li><strong>.once</strong> - the click event will be triggered once</li>
           <li><strong>.passive</strong> - tbc</li>
         </ul>
@@ -77,33 +77,108 @@
       </div>
       <div class="mb-8">
         <h2 class="text-2xl text-black font-bold mb-4">
-          Mouse Events (TBC)
+          Keyboard Events
         </h2>
         <p>
-          click, dblclick, scroll etc.
+          Vue can listen for certain keyboard events by attaching a v-on to a target element, this element has to be focused in order for it to register. The example below has a keyboard event watching for each time the up key is pressed and this in return fires a function that is increasing a count each time an event is recorded.
         </p>
         <div>
           <pre v-highlightjs>
             <code class="javascript">
-    // mouse events
+    v-on:keydown.up="increaseCount()"
             </code>
           </pre>
         </div>
+        <div>
+          <p>[press up] times pressed: {{ data.count }}</p>
+          <input placeholder="press up here" class="border border-black my-4 p-2" v-on:keydown.up="increaseCount()" />
+        </div>
+        <div>
+          <p>
+            Vue provides aliases for common keys such as:<br>
+            <span>.enter | .tab | .delete | .esc | .space | .up | .down | .left | .right</span><br>
+          </p>
+          <p class="mt-4">
+            Exact &amp; System Modifier Keys:<br>
+            <span>.exact | .ctrl | .alt | .shift | .meta (command or windows key respectively)</span>
+          </p>
+        </div>
+        <div>
+          <pre v-highlightjs>
+            <code class="javascript">
+    // this will fire even if Alt or Shift is also pressed
+    v-on:click.ctrl="onClick"
+
+    // this will only fire when Ctrl and no other keys are pressed
+    v-on:click.ctrl.exact="onCtrlClick"
+
+    // this will only fire when no system modifiers are pressed
+    v-on:click.exact="onClick"
+            </code>
+          </pre>
+        </div>
+        <!-- <h3 class="text-xl text-black font-bold mb-4">Examples</h3>
+        <p>tbc</p> -->
       </div>
       <div class="mb-8">
         <h2 class="text-2xl text-black font-bold mb-4">
-          Keyboard Events (TBC)
+          Mouse Events
         </h2>
-        <p>
-          keyup keydown etc.
+        <p class="mt-4">
+            Mouse Button Modifiers:<br>
+            <span>.left | .right | .middle</span>
+          </p>
+        <div>
+          <pre v-highlightjs>
+            <code class="javascript">
+    v-on:click.right="onClick"
+            </code>
+          </pre>
+        </div>
+        <button v-on:click.right="data.rightClicked = !data.rightClicked" class="py-2 px-6 text-white" :class="data.rightClicked ? 'bg-green' : 'bg-black' ">click me</button>
+        <p class="mt-4">Right clicking the above button toggles a data state which in turn alters the button colour, simply demonstrating the button is only waiting for a right click event. You can then chain on modifiers as above to add further functionality to a button. You could have a button for example that a single left click adds one, a single left click with shift adds 10.</p>
+      </div>
+      <div class="mb-8">
+        <h2 class="text-2xl text-black font-bold mb-4">
+          Scroll Events
+        </h2>
+        <p class="mt-4">
+            A listener has to be added to the window, the function can then capture or perform whatever the requirement of the component or functionality is. The vue options &amp; composition api differ as outlined below.
         </p>
         <div>
           <pre v-highlightjs>
             <code class="javascript">
-    // keyboard events
+    // Options API
+    created() {
+      window.addEventListener('scroll',this.handleScroll);
+    },
+    destroyed() {
+      window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+      handleScroll(event) {
+        // do something
+      }
+    }
+
+    // Composition API (all nested within setup)
+    setup() {
+      
+      window.addEventListener('scroll', handleScroll);
+
+      function handleScroll(event) {
+        // do something
+      }
+
+      onUnmounted(() => {
+        window.removeEventListener('scroll', this.handleScroll);
+      })
+    }
             </code>
           </pre>
         </div>
+        <!-- <h3 class="text-xl text-black font-bold mb-4">Examples</h3>
+        <p>tbc</p> -->
       </div>
     </div>
   </div>
@@ -112,13 +187,31 @@
 <script>
 import { reactive } from 'vue'
 import PageHeading from '../../../components/Page/PageHeading.vue'
+
+
+
 export default {
   setup() {
     const data = reactive({
+      count: 0,
+      rightClicked: false
     })
+
+    window.addEventListener('scroll', handleScroll);
+
+    function increaseCount() {
+      return data.count = data.count + 1;
+    }
+
+    function handleScroll () {
+      // console.log(document.documentElement.scrollTop);
+    }
+
     return {
       data,
-      'page-heading' : PageHeading 
+      'page-heading' : PageHeading,
+      increaseCount,
+      handleScroll,
     }
   }
 }
