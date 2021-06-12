@@ -46,7 +46,7 @@
         <p class="my-2">
           Same as above but the object properties have to be accessed to prevent outputting the entire object, allows for more complex data to be passed to the component.
         </p>
-        <p class="my-2">The item (i.e vegetable or fruit) can also have parenthesis and a variable of any name used to count that position it came when the loop ran</p>
+        <p class="my-2">The item (i.e vegetable or fruit) can also have parenthesis and a variable of any name used to count that position it came when the loop ran.</p>
         <div>
           <pre v-highlightjs>
                   <code class="javascript">
