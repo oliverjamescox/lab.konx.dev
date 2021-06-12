@@ -29,6 +29,14 @@
             </template>
           </div>
         </div>
+        <!-- <router-link to="/" class="navigation__home absolute">
+          <div class="inner transition duration-700 absolute">
+              <font-awesome-icon
+                class="text-xl text-white"
+                :icon="['fas', 'home']"
+              />
+          </div>
+        </router-link> -->
       </div>
       <div class="navigation__sidebar bg-grey">
         <div class="text-white text-center py-6 md:py-10">
@@ -194,41 +202,25 @@ export default {
 
     }
     
-    &__icon {
+    &__icon, &__home {
       
       width: 40px;
       height: 40px;
       top: 30px;
       left: -40px;
-
-
-      // transform: rotate(45deg) translate(50%,100%);
       border-radius: 5px 0 0 5px;
       background: $black;
       
       .inner {
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%,-50%) rotate(-45deg);
-        // top: 25px;
-        // left: 7px;
-        // transform: rotate(-45deg);
         top: 50%;
         left: 50%;
         transform: translate(-50%,-40%);
         color: $white;
-
-        
-        
       }
-      
-      // &.open {
-        
-      //   .inner {
-      //     transform: rotate(135deg);
-      //   }
-      // }
-      
+    }
+
+    &__home {
+      top: 75px;
     }
 }
   

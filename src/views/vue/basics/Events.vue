@@ -127,7 +127,7 @@
         <p class="mt-4">
             Mouse Button Modifiers:<br>
             <span>.left | .right | .middle</span>
-          </p>
+        </p>
         <div>
           <pre v-highlightjs>
             <code class="javascript">
@@ -137,6 +137,24 @@
         </div>
         <button v-on:click.right="data.rightClicked = !data.rightClicked" class="py-2 px-6 text-white" :class="data.rightClicked ? 'bg-green' : 'bg-black' ">click me</button>
         <p class="mt-4">Right clicking the above button toggles a data state which in turn alters the button colour, simply demonstrating the button is only waiting for a right click event. You can then chain on modifiers as above to add further functionality to a button. You could have a button for example that a single left click adds one, a single left click with shift adds 10.</p>
+        <h3 class="text-xl text-black font-bold my-4">Tracking pointer movement</h3>
+        <p class="">By utilising v-on:mousemove you can record information about the mouse pointers current location, this could be used to move an element towards the users pointer. Below example shows a div with a specific ID having the coords updated when the mouse is moved within the bounding box.</p>
+        <div>
+          <pre v-highlightjs>
+            <code class="javascript">
+    function updateXY (e) {
+      data.xPos = e.offsetX;
+      data.yPos = e.offsetY
+    }
+            </code>
+          </pre>
+        </div>
+        <div class="flex justify-center">
+          <div class="canvas-demo relative border border-b w-2/3 h-56" v-on:mousemove="updateXY">
+              <span class="absolute bottom-0 right-0 py-2 px-4">X: {{ data.xPos }}, Y: {{ data.yPos }}</span>
+          </div>
+        </div>
+        
       </div>
       <div class="mb-8">
         <h2 class="text-2xl text-black font-bold mb-4">
@@ -194,7 +212,9 @@ export default {
   setup() {
     const data = reactive({
       count: 0,
-      rightClicked: false
+      rightClicked: false,
+      xPos: 0,
+      yPos: 0
     })
 
     window.addEventListener('scroll', handleScroll);
@@ -207,15 +227,18 @@ export default {
       // console.log(document.documentElement.scrollTop);
     }
 
+    function updateXY (e) {
+      data.xPos = e.offsetX;
+      data.yPos = e.offsetY
+    }
+
     return {
       data,
       'page-heading' : PageHeading,
       increaseCount,
       handleScroll,
+      updateXY
     }
   }
 }
 </script>
-
-<style lang="scss">
-</style>

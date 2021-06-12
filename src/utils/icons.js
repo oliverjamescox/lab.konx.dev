@@ -1,7 +1,8 @@
 import { 
     faChevronLeft,
     faBars,
-    faTimes 
+    faTimes,
+    faHome, 
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -18,6 +19,7 @@ export default {
     faBars,
     faTimes,
     faVuejs,
-    faJs
+    faJs,
+    faHome,
 }
 

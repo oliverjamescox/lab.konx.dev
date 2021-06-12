@@ -37,6 +37,22 @@
             Events
           </li>
         </router-link>
+        <router-link to="/vue/basics/rendering">
+          <li
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
+            Rendering
+          </li>
+        </router-link>
+        <router-link to="/vue/basics/components">
+          <li
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
+            Components
+          </li>
+        </router-link>
       </ul>
     </div>
   </div>
