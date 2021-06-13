@@ -6,125 +6,108 @@
     />
     <div class="p-6 md:p-12 lg:py-12 lg:px-20">
       <div class="mb-8">
-        <p class="my-2">
-          The ability to isolate and control every aspect of the project to the smallest detail can be achieved with components. You can have large all encompassing total pages as a single .vue file and be considered a "component" or have components nested within components such as a blog card component with a image and button component nested within it.
-        </p>
-        <p>
-            The obvious benefits being the reduction in technical debt in terms of modular functionality allowing for elements to be interchanged simply, great for readability. The only real negative of going OTT with nested components is it's perhaps a little overkill and passing data up and down between the numerous levels could lead to excessive prop and emitting.
-        </p>
+        <p><strong>**** this syntax is for the new composition api as part of vue 3 ****</strong></p>
         <h3 class="text-xl text-black font-bold my-4">Structure</h3>
         <p class="my-2">Made up of 3 key blocks, the first is the template, this will contain everything viewable on the frontend, in vue 2 a parent div is required but in vue 3 this is no longer required. Secondly the script block, contains all of the logic for the component, methods, computed properties, data etc. In vue 2 the options API is the defacto choice. In vue 3 it's switched to the composition api which I am using on this project. Lastly the style block, used to contain specific styles for the block (so called CSS in JS). You can use webpack etc to add loaders to allow for support of scss global variables, also scope the styles to only this component easily by adding scope to the tag preventing styling conflicts.</p>
-        <p class="my-2"></p>
+        <h3 class="text-xl text-black font-bold my-4">Template section</h3>
+        <p class="my-2">Everything to be viewable on the frontend is contained within the template tags.</p>
         <div>
           <pre v-highlightjs>
                   <code class="javascript">
-    // fruits: [ 'Apple', 'Banana', 'Orange' ]
+    // template block
 
-    li :key="index" v-for="(fruit,index) in data.fruits"
+    &lt;template&gt;
+      &lt;div&gt;
+        &lt;a-component /&gt;
+        &lt;div v-if="data.modalOpen"&gt;
+         conditional content here
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
                   </code>
                 </pre>
         </div>
-        <h3 class="text-xl text-black font-bold mb-4">
-          Arrays
-        </h3>
-        <p>
-          A simple array of 3 containing fruits, the v-for will take that array and repeat for as many items are in that array, each loop is then specific to the index position and the data available at that point. example below ouputting the above into an ul with individual fruit items populating the li's.
-        </p>
-        <p class="my-2">For a slightly expanded explanation of what is going on the v-for loops through the specified data array and assigns each entry, with the code looking like this.. v-for="fruit in fruits. Outside of the loop the above isn't accessible and outputs as this.. fruits: {{ data.fruits }} | fruit: {{ data.fruit }}</p>
-        <p class="my-2">The data is output as the array it is but the fruit isn't yet assigned so shows as empty, this word can be anything, can be undestood the fruit is one of fruits and the v-for is looping through each of them.</p>
-        <div class="my-4">
-            <ul>
-                <li :key="index" v-for="(fruit,index) in data.fruits">- {{ fruit }}, index: {{ index }}</li>
-            </ul>
-        </div>
-        <p class="my-2">
-          The v-for has to be placed on the element that's to be repeated, if it was placed on the ul you would end up with 3 seperate ul lists all with just a single li. A key must be used as they are expected to and flag as an issue with modern linting tools.
-        </p>
-        <h3 class="text-xl text-black font-bold my-4">
-          Objects
-        </h3>
-        <p class="my-2">
-          Same as above but the object properties have to be accessed to prevent outputting the entire object, allows for more complex data to be passed to the component.
-        </p>
-        <p class="my-2">The item (i.e vegetable or fruit) can also have parenthesis and a variable of any name used to count that position it came when the loop ran.</p>
+        <h3 class="text-xl text-black font-bold my-4">Script section</h3>
+        <p class="my-2">The script block can become expansive, trying to keep components lightweight and instead nest additional ones to improve readability and lessening technical debt.</p>
+        <h4 class="text-lg text-black font-bold my-4">Requirements</h4>
+        <ul>
+          <li>1. add imports, i.e components or vue features the component will need (reactive,refs,computed etc)</li>
+          <li>2. wrap a export default around everything other than the imports.</li>
+          <li>3. Create a setup function and declare default component data states if required.</li>
+          <li>4. Follow the syntax for functions &amp; computed properties</li>
+          <li>- return everything, i.e data, components &amp; functions.</li>
+        </ul>
         <div>
           <pre v-highlightjs>
                   <code class="javascript">
-    // vegetables: [
-    //    {name: 'Tomato', colour: 'Red'},
-    //    {name: 'Pepper', colour: 'Orange'},
-    //    {name: 'Cucumber', colour: 'Green'}
-    // ],
+    // script block
 
-    li :key="index" v-for="(vegetable, index) in data.vegetables"
+    &lt;script&gt;
+      // [1] imports here
+      import { reactive } from 'vue'
+      import aComponent from './components/aComponent.vue'
+
+      // [2]
+      export default {
+
+        // [3]
+        setup() {
+          const data = reactive({
+            modalOpen: false,
+            count: 10,
+          })
+
+
+          // [4] functions declared like this
+          function trackClickEvent(event) {
+            console.log(event);
+          }
+
+          // [4] computed properties as this
+          countDoubled: computed(() => data.count * 2)
+
+          // [5]
+          return {
+            data,
+            aComponent
+            'a-component' : aComponent
+          }
+        }
+      }
+
+    &lt;/script&gt;
                   </code>
                 </pre>
         </div>
-        <div>
-            <ul>
-                <li :key="index" v-for="(vegetable, index) in data.vegetables">{{ index + 1 }}. The vegetable is called a {{vegetable.name}} and it's colour is {{ vegetable.colour}}.</li>
-            </ul>
-        </div>
+        <p class="my-2">This is the basic implementation of the composition API, will expand with specific example that make better use of lifecycle methods.</p>
       </div>
-      <!-- <div class="mb-8">
+      <div class="mb-8">
         <h2 class="text-2xl text-black font-bold mb-4">
-          Iteration
+          Style block
         </h2>
-        <p class="my-2">
-          Keeping your .vue files clean and modular is always the goal in terms of re-usability and readability. Same with following the DRY (Don't repeat yourself) principle which can utilise arrays and objects to iterate over a block of code as many times as possible with no need to copy and paste blocks. This is achieved with the v-for directive.
-        </p>
-        <p class="my-2"></p>
         <div>
           <pre v-highlightjs>
                   <code class="javascript">
-    // fruits: [ 'Apple', 'Banana', 'Orange' ]
+    &lt;style lang="scss" scoped&gt;
 
-    li :key="index" v-for="(fruit,index) in data.fruits"
+    .class-name {
+      background: yellow;
+      &__child {
+        border: orange 1px solid;
+        &--active {
+          color: red;
+        }
+      }
+    }
+
+    &lt;/style&gt;
                   </code>
                 </pre>
         </div>
-        <h3 class="text-xl text-black font-bold mb-4">
-          Arrays
-        </h3>
         <p>
-          A simple array of 3 containing fruits, the v-for will take that array and repeat for as many items are in that array, each loop is then specific to the index position and the data available at that point. example below ouputting the above into an ul with individual fruit items populating the li's.
+          Utilising a vue loader you are able to access global scss on components by adding the lang="scss". If you also want to make sure the styling doesn't cause specificity issues or side effects you can add scoped and vue will automatically add a data attribute unique to that component.
         </p>
-        <p class="my-2">For a slightly expanded explanation of what is going on the v-for loops through the specified data array and assigns each entry, with the code looking like this.. v-for="fruit in fruits. Outside of the loop the above isn't accessible and outputs as this.. fruits: {{ data.fruits }} | fruit: {{ data.fruit }}</p>
-        <p class="my-2">The data is output as the array it is but the fruit isn't yet assigned so shows as empty, this word can be anything, can be undestood the fruit is one of fruits and the v-for is looping through each of them.</p>
-        <div class="my-4">
-            <ul>
-                <li :key="index" v-for="(fruit,index) in data.fruits">- {{ fruit }}, index: {{ index }}</li>
-            </ul>
-        </div>
-        <p class="my-2">
-          The v-for has to be placed on the element that's to be repeated, if it was placed on the ul you would end up with 3 seperate ul lists all with just a single li. A key must be used as they are expected to and flag as an issue with modern linting tools.
-        </p>
-        <h3 class="text-xl text-black font-bold my-4">
-          Objects
-        </h3>
-        <p class="my-2">
-          Same as above but the object properties have to be accessed to prevent outputting the entire object, allows for more complex data to be passed to the component.
-        </p>
-        <p class="my-2">The item (i.e vegetable or fruit) can also have parenthesis and a variable of any name used to count that position it came when the loop ran</p>
-        <div>
-          <pre v-highlightjs>
-                  <code class="javascript">
-    // vegetables: [
-    //    {name: 'Tomato', colour: 'Red'},
-    //    {name: 'Pepper', colour: 'Orange'},
-    //    {name: 'Cucumber', colour: 'Green'}
-    // ],
-
-    li :key="index" v-for="(vegetable, index) in data.vegetables"
-                  </code>
-                </pre>
-        </div>
-        <div>
-            <ul>
-                <li :key="index" v-for="(vegetable, index) in data.vegetables">{{ index + 1 }}. The vegetable is called a {{vegetable.name}} and it's colour is {{ vegetable.colour}}.</li>
-            </ul>
-        </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>

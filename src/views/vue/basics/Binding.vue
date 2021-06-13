@@ -7,42 +7,6 @@
     <div class="p-6 md:p-12 lg:py-12 lg:px-20">
       <div class="mb-8">
         <h2 class="text-2xl text-black font-bold mb-4">
-          Data Binding
-        </h2>
-        <p>
-          If we want to bind data to any kind of attribute such as a href link a directive must be used. Such as v-bind:href or the shortcode of :href.
-        </p>
-        <div>
-          <pre v-highlightjs>
-                  <code class="javascript">
-    const state = reactive({
-      websiteUrl: 'https://konx.dev',
-    })
-
-    // Usage
-    v-bind:href="websiteUrl"
-
-    // Output
-    a href="https://konx.dev"
-                  </code>
-                </pre>
-        </div>
-        <p>Another alternative is storing the entire html tag in a data value with the key for output and applying it to a DOM element with the v-html directive. To this day I have yet to write any code and bind state in this way instead always opting for the above shortcode.</p>
-        <div>
-          <pre v-highlightjs>
-                  <code class="javascript">
-    const state = reactive({
-      websiteTag: 'a href="https://konx.dev">website'
-    })
-
-    // Usage (on an element, ie div, span etc)
-    v-html="websiteTag"
-                  </code>
-                </pre>
-        </div>
-      </div>
-      <div class="mb-8">
-        <h2 class="text-2xl text-black font-bold mb-4">
           Two-way Data Binding
         </h2>
         <p>
@@ -130,7 +94,7 @@
         <p class="mb-4">
           The above syntax means if the data property of isActive evaluates to true the class active will be added to the element.
         </p>
-        <p>If there are multiple classes rather than inlining they can be passed as a object or an array.</p>
+        <p>If there are multiple classes rather than inlining they can be passed as a object or an array. The classObject is on the div of the codeblock and the classArray is on the pre. Inspect with devtools to see the result.</p>
         <div :class="data.classObject">
           <pre
             :class="data.classArray"
@@ -138,10 +102,14 @@
           >
                   <code class="javascript">
     const data = reactive({
+
+      // renders as: class="class-object another-class-object"
       classObject: {
         'class-object': true,
         'another-class-object': true,
       },
+
+      // renders as: class="class-one class-two class-three"
       classArray: ['class-one class-two class-three'],
     })
 
@@ -170,6 +138,7 @@
         <h3 class="font-bold text-xl mb-2">
           User Status
         </h3>
+        <p class="my-4">UI component, that when clicked toggles the status of the user, outputs they are online and has a green dot, a click event here is to demonstrate the functionality easily but this could be triggered by a app state change. The example component when viewed (/components/basics/userstatus.vue) shows the examples of a message being controlled by either a if/else statement or ternary and also how to track an event of in this example a button click.</p>
         <user-status />
       </div>
     </div>
@@ -196,7 +165,7 @@ export default {
     })
 
     watchEffect(() => {
-        console.log(root.value) // => <div></div>
+        console.log(root.value)
     },
     {
         flush: 'post'
