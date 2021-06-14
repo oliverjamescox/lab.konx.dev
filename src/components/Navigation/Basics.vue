@@ -66,7 +66,7 @@
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
           >
-            Slots
+            Slots &amp; Dynamic Components
           </li>
         </router-link>
       </ul>

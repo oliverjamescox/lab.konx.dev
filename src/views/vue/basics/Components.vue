@@ -108,6 +108,9 @@
           Utilising a vue loader you are able to access global scss on components by adding the lang="scss". If you also want to make sure the styling doesn't cause specificity issues or side effects you can add scoped and vue will automatically add a data attribute unique to that component.
         </p>
       </div>
+      <div>
+        <user-basic-search />
+      </div>
     </div>
   </div>
 </template>
@@ -115,10 +118,12 @@
 <script>
 import { reactive } from 'vue'
 import PageHeading from '../../../components/Page/PageHeading.vue'
+import UserBasicSearch from '../../../components/Basics/UserBasicSearch.vue'
 
 
 
 export default {
+  components: { UserBasicSearch },
   setup() {
     const data = reactive({
     })
@@ -126,6 +131,7 @@ export default {
     return {
       data,
       'page-heading' : PageHeading,
+      'user-basic-search' : UserBasicSearch
     }
   }
 }
