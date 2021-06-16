@@ -1,8 +1,8 @@
 <template>
   <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
     <page-heading
-      title="Typescript"
-      bg-colour="blue"
+      title="Components"
+      bg-colour="green"
     />
     <div class="p-6 md:p-12 lg:py-12 lg:px-20">
       index

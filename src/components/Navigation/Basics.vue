@@ -13,7 +13,7 @@
         class="text-left cursor-pointer text-white"
         :class="isExpanded ? 'visible' : 'hidden'"
       >
-        <router-link to="/vue/basics/state">
+        <router-link to="/documentation/basics/state">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
@@ -21,7 +21,7 @@
             State, Computed &amp; Methods
           </li>
         </router-link>
-        <router-link to="/vue/basics/binding">
+        <router-link to="/documentation/basics/binding">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
@@ -29,7 +29,7 @@
             Data &amp; Class Binding
           </li>
         </router-link>
-        <router-link to="/vue/basics/events">
+        <router-link to="/documentation/basics/events">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
@@ -37,7 +37,7 @@
             Events
           </li>
         </router-link>
-        <router-link to="/vue/basics/rendering">
+        <router-link to="/documentation/basics/rendering">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
@@ -45,7 +45,7 @@
             Rendering
           </li>
         </router-link>
-        <router-link to="/vue/basics/components">
+        <router-link to="/documentation/basics/components">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
@@ -53,7 +53,7 @@
             Components
           </li>
         </router-link>
-        <router-link to="/vue/basics/passing-data">
+        <router-link to="/documentation/basics/passing-data">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
@@ -61,7 +61,7 @@
             Passing Data
           </li>
         </router-link>
-        <router-link to="/vue/basics/slots">
+        <router-link to="/documentation/basics/slots">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"

@@ -5,26 +5,18 @@
     :to="link"
   >
     <div class="card border border-grey-lighter flex flex-col justify-center items-center">
-      <div v-if=" title == 'JavaScript' " class="mt-12 mb-6 w-32 h-32">
-        <JavaScriptLogo />
-      </div>
-      <div v-else-if=" title == 'Vue' " class="mt-12 mb-6 w-32 h-32">
+      <div class="mt-12 mb-6 w-32 h-32">
         <VueLogo />
       </div>
-      <!-- <div v-else-if=" title == 'TypeScript' " class="mt-12 w-32 h-32">
-        <TypeScriptLogo class="mt-12 w-32 h-32" />
-      </div> -->
-      <div class="mb-4 p-2 w-full text-center text-grey font-bold">
+      <div class="mb-4 p-2 w-full text-center text-blue-brand font-bold">
         {{ title }}
       </div>
     </div>
-    <div class="card__border bg-grey" />
+    <div class="card__border bg-blue-brand" />
   </router-link>
 </template>
 <script>
 // Logos
-import JavaScriptLogo from '../../assets/svg/javascript.svg'
-import TypeScriptLogo from '../../assets/svg/typescript.svg'
 import VueLogo from '../../assets/svg/vuejs.svg'
 
 import { reactive } from 'vue'
@@ -51,8 +43,6 @@ export default {
 
         return {
             data,
-            JavaScriptLogo,
-            TypeScriptLogo,
             VueLogo,
         }
   }

@@ -2,7 +2,7 @@
   <div>
     <div
       id="navigation"
-      class="navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-black"
+      class="navigation__bar transition duration-500 fixed flex flex-row right-0 top-0 h-full bg-blue-brand"
       :class="{ 'open' : isOpen }"
     >
       <div
@@ -29,67 +29,74 @@
             </template>
           </div>
         </div>
-        <!-- <router-link to="/" class="navigation__home absolute">
+        <router-link to="/" class="navigation__home absolute">
           <div class="inner transition duration-700 absolute">
               <font-awesome-icon
                 class="text-xl text-white"
                 :icon="['fas', 'home']"
               />
           </div>
-        </router-link> -->
+        </router-link>
       </div>
       <div class="navigation__sidebar bg-grey">
-        <div class="text-white text-center py-6 md:py-10">
-          logo here..
+        <div class="py-5 flex justify-center items-center">
+          <div class="h-16 w-16">
+              <VueLogo />
+          </div>
         </div>
+        <!-- <div class="border-blue-brand border-t-2 relative mt-16">
+          <div
+            class="sidebar__heading cursor-pointer absolute text-grey-lighter font-bold uppercase text-sm bg-blue-brand py-2 px-6"
+            @click="featuresToggle()"
+          >
+            Features
+          </div>
+          <template v-if="featuresOpen">
+          </template>
+        </div> -->
         <div class="border-green border-t-2 relative mt-16">
           <div
-            class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-green py-2 px-6"
+            class="sidebar__heading cursor-pointer absolute text-grey-lighter font-bold uppercase text-sm bg-green py-2 px-6"
             @click="vueToggle()"
           >
-            Vue
+            Documentation
           </div>
           <template v-if="vueOpen">
-            <!-- <vue3-features /> -->
             <basics @navCollapse="navToggle()" />
+            <features @navCollapse="navToggle()" />
             <plugins @navCollapse="navToggle()" />
           </template>
         </div>
-        <!-- <div class="border-yellow border-t-2 relative mt-16">
+        <div class="border-blue-brand border-t-2 relative mt-16">
           <div
-            class="sidebar__heading cursor-pointer absolute text-grey font-bold uppercase text-sm bg-yellow py-2 px-6"
-            @click="jsToggle()"
+            class="sidebar__heading cursor-pointer absolute text-grey-lighter font-bold uppercase text-sm bg-blue-brand py-2 px-6"
+            @click="compToggle()"
           >
-            JavaScript
+            Components
           </div>
-          <template v-if="jsOpen">
-            <vue3-features />
-            <basics />
-            <plugins />
+          <template v-if="compOpen">
           </template>
-        </div> -->
-        <!-- <div class="border-blue border-t-2 relative mt-16">
+        </div>
+        <div class="border-red border-t-2 relative mt-16">
           <div
-            class="sidebar__heading cursor-pointer absolute text-white font-bold uppercase text-sm bg-blue py-2 px-6"
-            @click="tsToggle()"
+            class="sidebar__heading cursor-pointer absolute text-grey-lighter font-bold uppercase text-sm bg-red py-2 px-6"
+            @click="animToggle()"
           >
-            TypeScript
+            Animation
           </div>
-          <template v-if="tsOpen">
-            <vue3-features />
-            <basics />
-            <plugins />
+          <template v-if="animOpen">
           </template>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Vue3Features from "../Navigation/Vue3Features.vue";
+import VueLogo from "../../assets/svg/vuejs.svg";
 import Basics from "../Navigation/Basics.vue";
 import Plugins from "../Navigation/Plugins.vue";
+import Features from "../Navigation/Features.vue";
 
 export default {
   name: "GlobalNavigation",
@@ -97,8 +104,8 @@ export default {
     return {
       isOpen: false,
       vueOpen: false,
-      jsOpen: false,
-      tsOpen: false,
+      featuresOpen: false,
+      compOpen: false,
     }
   },
   methods: {
@@ -116,9 +123,10 @@ export default {
     },
     vueToggle() {
       
-      if (this.jsOpen || this.tsOpen) {
-        this.jsOpen = false;
-        this.tsOpen = false;
+      if (this.featuresOpen || this.compOpen || this.animOpen) {
+        this.featuresOpen = false;
+        this.compOpen = false;
+        this.animOpen = false;
         
         this.vueOpen = !this.vueOpen;
       } else {
@@ -126,34 +134,49 @@ export default {
       }
 
     },
-    jsToggle() {
+    featuresToggle() {
 
-      if (this.vueOpen || this.tsOpen) {
+      if (this.vueOpen || this.compOpen || this.animOpen) {
         this.vueOpen = false;
-        this.tsOpen = false;
+        this.compOpen = false;
+        this.animOpen
 
-        this.jsOpen = !this.jsOpen;
+        this.featuresOpen = !this.featuresOpen;
       } else {
-        this.jsOpen = !this.jsOpen;
+        this.featuresOpen = !this.featuresOpen;
       }
     },
-    tsToggle() {
+    compToggle() {
 
-      if (this.vueOpen || this.jsOpen) {
+      if (this.vueOpen || this.featuresOpen || this.animOpen) {
         this.vueOpen = false;
-        this.jsOpen = false;
+        this.featuresOpen = false;
+        this.animOpen = false;
 
-        this.tsOpen = !this.tsOpen;
+        this.compOpen = !this.compOpen;
       } else {
-        this.tsOpen = !this.tsOpen;
+        this.compOpen = !this.compOpen;
+      }
+    },
+    animToggle() {
+
+      if (this.vueOpen || this.featuresOpen || this.compOpen) {
+        this.vueOpen = false;
+        this.featuresOpen = false;
+        this.compOpen = false;
+
+        this.animOpen = !this.animOpen;
+      } else {
+        this.animOpen = !this.animOpen;
       }
     }
 
   },
   components: {
-    // 'vue3-features': Vue3Features,
     'basics': Basics,
     'plugins': Plugins,
+    'features': Features,
+    VueLogo
   }
 };
 </script>
@@ -209,7 +232,7 @@ export default {
       top: 30px;
       left: -40px;
       border-radius: 5px 0 0 5px;
-      background: $black;
+      background: $grey;
       
       .inner {
         top: 50%;

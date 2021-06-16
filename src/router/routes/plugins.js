@@ -1,5 +1,5 @@
-const Vuex = () => import('../../views/vue/plugins/Vuex.vue');
+const Vuex = () => import('../../views/documentation/plugins/Vuex.vue');
 
 export default [
-    { path: '/vue/plugins/vuex', component: Vuex }
+    { path: '/documentation/plugins/vuex', component: Vuex }
 ];

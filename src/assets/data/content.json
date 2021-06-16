@@ -1,46 +1,71 @@
 {
-    "vue": {
-        "vue 3 features": {
-            "overview": {
-                "title": "Overview",
-                "url": "/vue/vue3-features/overview"
-            }
-        },
+    "documentation": {
         "basics": {
             "state": {
                 "title": "State, Computed & Methods",
-                "url": "/vue/basics/state"
+                "url": "/documentation/basics/state"
             },
             "data": {
                 "title": "Data & Class Binding",
-                "url": "/vue/basics/binding"
+                "url": "/documentation/basics/binding"
             },
             "events": {
                 "title": "Events",
-                "url": "/vue/basics/events"
+                "url": "/documentation/basics/events"
+            },
+            "rendering": {
+                "title": "Rendering",
+                "url": "/documentation/basics/rendering"
+            },
+            "components": {
+                "title": "Components",
+                "url": "/documentation/basics/components"
+            },
+            "passing-data": {
+                "title": "Passing Data",
+                "url": "/documentation/basics/passing-data"
+            },
+            "slots": {
+                "title": "Slots & Dynamic Components",
+                "url": "/documentation/basics/slots"
+            }
+        },
+        "features": {
+            "lifecycle-hooks": {
+                "title": "Lifecycle Hooks",
+                "url": "/documentation/features/lifecycle-hooks"
+            },
+            "composition-api": {
+                "title": "Composition API",
+                "url": "/documentation/plugins/composition-api"
             }
         },
         "plugins": {
             "vue-router": {
                 "title": "Vue Router 4",
-                "url": "/vue/plugins/vue-router"
+                "url": "/documentation/plugins/vue-router"
             },
             "vuex": {
                 "title": "Vuex (4.0)",
-                "url": "/vue/plugins/vuex"
+                "url": "/documentation/plugins/vuex"
+            },
+            "vue-meta": {
+                "title": "Vue-meta",
+                "url": "/documentation/plugins/vue-meta"
             },
             "apollo": {
                 "title": "Apollo",
-                "url": "/vue/plugins/apollo"
+                "url": "/documentation/plugins/apollo"
             },
             "axios": {
                 "title": "Axios",
-                "url": "/vue/plugins/axios"
+                "url": "/documentation/plugins/axios"
             },
             "google-analytics": {
                 "title": "Google Analytics",
-                "url": "/vue/plugins/google-analytics"
+                "url": "/documentation/plugins/google-analytics"
             }
         }
+        
     }
 }

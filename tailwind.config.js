@@ -23,8 +23,11 @@ module.exports = {
         default: '#41B883',
         lighter: '#67C69C',
       },
-      blue: '#007acc',
-      red: 'red',
+      blue: {
+        default: '#007acc',
+        brand: '#34495F',
+      },
+      red: '#ff6d56',
       yellow: '#f0db4f',
     },
     extend: {},

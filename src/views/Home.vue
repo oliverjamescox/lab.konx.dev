@@ -7,18 +7,23 @@
   <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
     <div class="p-10 flex flex-wrap justify-evenly">
       <page-card
-        title="Vue"
-        link="/vue"
-        status="true"
-      />
-      <page-card
-        title="JavaScript"
-        link="/javascript"
+        title="Features"
+        link="/features"
         status="false"
       />
       <page-card
-        title="TypeScript"
-        link="/typescript"
+        title="Documentation"
+        link="/documentation"
+        status="true"
+      />
+      <page-card
+        title="Components"
+        link="/components"
+        status="false"
+      />
+      <page-card
+        title="Animation"
+        link="/animation"
         status="false"
       />
     </div>

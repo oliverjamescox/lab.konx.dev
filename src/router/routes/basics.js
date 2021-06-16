@@ -1,17 +1,17 @@
-const State = () => import('../../views/vue/basics/State.vue');
-const Binding = () => import('../../views/vue/basics/Binding.vue');
-const Events = () => import('../../views/vue/basics/Events.vue');
-const Rendering = () => import('../../views/vue/basics/Rendering.vue');
-const Components = () => import('../../views/vue/basics/Components.vue');
-const PassingData = () => import('../../views/vue/basics/PassingData.vue');
-const Slots = () => import('../../views/vue/basics/Slots.vue');
+const State = () => import('../../views/documentation/basics/State.vue');
+const Binding = () => import('../../views/documentation/basics/Binding.vue');
+const Events = () => import('../../views/documentation/basics/Events.vue');
+const Rendering = () => import('../../views/documentation/basics/Rendering.vue');
+const Components = () => import('../../views/documentation/basics/Components.vue');
+const PassingData = () => import('../../views/documentation/basics/PassingData.vue');
+const Slots = () => import('../../views/documentation/basics/Slots.vue');
 
 export default [
-    { path: '/vue/basics/state', component: State },
-    { path: '/vue/basics/binding', component: Binding },
-    { path: '/vue/basics/events', component: Events },
-    { path: '/vue/basics/rendering', component: Rendering },
-    { path: '/vue/basics/components', component: Components },
-    { path: '/vue/basics/passing-data', component: PassingData },
-    { path: '/vue/basics/slots', component: Slots },
+    { path: '/documentation/basics/state', component: State },
+    { path: '/documentation/basics/binding', component: Binding },
+    { path: '/documentation/basics/events', component: Events },
+    { path: '/documentation/basics/rendering', component: Rendering },
+    { path: '/documentation/basics/components', component: Components },
+    { path: '/documentation/basics/passing-data', component: PassingData },
+    { path: '/documentation/basics/slots', component: Slots },
 ];

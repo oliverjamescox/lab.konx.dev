@@ -1,9 +1,9 @@
-const Vue = () => import('../../views/singles/Vue.vue');
-const Javascript = () => import('../../views/singles/Javascript.vue');
-const Typescript = () => import('../../views/singles/Typescript.vue');
+const Documentation = () => import('../../views/singles/Documentation.vue');
+const Animation = () => import('../../views/singles/Animation.vue');
+const Components = () => import('../../views/singles/Components.vue');
 
 export default [
-    { path: '/vue', component: Vue },
-    { path: '/javascript', component: Javascript },
-    { path: '/typescript', component: Typescript },
+    { path: '/documentation', component: Documentation },
+    { path: '/animation', component: Animation },
+    { path: '/components', component: Components },
 ];
