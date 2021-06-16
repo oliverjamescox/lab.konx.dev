@@ -66,6 +66,13 @@
                 "url": "/documentation/plugins/google-analytics"
             }
         }
-        
+    },
+    "animation": {
+        "transitions": {
+            "transition-wrapper": {
+                "title": "Transition Wrapper",
+                "url": "/animation/transitions/transition-wrapper"
+            }
+        }
     }
 }

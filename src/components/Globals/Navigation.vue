@@ -85,6 +85,7 @@
             Animation
           </div>
           <template v-if="animOpen">
+            <transitions @navCollapse="navToggle()" />
           </template>
         </div>
       </div>
@@ -97,6 +98,7 @@ import VueLogo from "../../assets/svg/vuejs.svg";
 import Basics from "../Navigation/Basics.vue";
 import Plugins from "../Navigation/Plugins.vue";
 import Features from "../Navigation/Features.vue";
+import Transitions from "../Navigation/Transitions.vue";
 
 export default {
   name: "GlobalNavigation",
@@ -106,6 +108,7 @@ export default {
       vueOpen: false,
       featuresOpen: false,
       compOpen: false,
+      animOpen: false,
     }
   },
   methods: {
@@ -176,6 +179,7 @@ export default {
     'basics': Basics,
     'plugins': Plugins,
     'features': Features,
+    'transitions': Transitions,
     VueLogo
   }
 };

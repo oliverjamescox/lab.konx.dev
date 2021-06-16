@@ -24,7 +24,7 @@
       <page-card
         title="Animation"
         link="/animation"
-        status="false"
+        status="true"
       />
     </div>
     <!-- Highlighted components, component search index to go here -->
