@@ -6,7 +6,9 @@
     <global-navigation />
     <div class="bg-grey-lighter w-full h-full min-h-screen">
       <div class="">
-        <router-view />
+          <transition name="route" mode="out-in">
+            <router-view />
+          </transition>
       </div>
       <!-- <holding-page></holding-page> -->
       <!-- <button @click="gaTest()">ga test</button> -->
@@ -62,5 +64,24 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
+
+.route-enter-from {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.route-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.router-leave-to {
+    opacity: 0;
+    transform: translate(-100px);
+}
+
+.route-leave-active {
+    transition: all 0.3s ease-in;
+}
+
 </style>

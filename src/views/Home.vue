@@ -1,9 +1,9 @@
 <template>
-  <page-hero
+  <!-- <page-hero
     :title="data.title"
     bg-colour="green"
     :description="data.description"
-  />
+  /> -->
   <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
     <div class="p-10 flex flex-wrap justify-evenly">
       <page-card

@@ -77,9 +77,9 @@
           <template v-if="compOpen">
           </template>
         </div>
-        <div class="border-red border-t-2 relative mt-16">
+        <div class="border-green border-t-2 relative mt-16">
           <div
-            class="sidebar__heading cursor-pointer absolute text-grey-lighter font-bold uppercase text-sm bg-red py-2 px-6"
+            class="sidebar__heading cursor-pointer absolute text-grey-lighter font-bold uppercase text-sm bg-green py-2 px-6"
             @click="animToggle()"
           >
             Animation

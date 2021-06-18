@@ -73,8 +73,9 @@
                   </code>
           </pre>
         </div>
+        <h3 class="mb-4 text-lg font-bold">CSS Animation using transition classes</h3>
         <p class="my-2">
-          Definitive example of a simple animation both appearing and disappearing, it will still work even with the fade-enter-to and fade-leave-from commented out as opacity by default is 1 so if thats all these 2 classes can be missed. classes can also be combined or nested if using scss, example below assumes vanilla css.
+          <strong>*** assumes css animation knowledge ***</strong> Definitive example of a simple animation both appearing and disappearing, it will still work even with the fade-enter-to and fade-leave-from commented out as opacity by default is 1 so if thats all these 2 classes can be missed. classes can also be combined or nested if using scss, example below assumes vanilla css.
         </p>
         <div>
           <pre v-highlightjs>
@@ -104,39 +105,73 @@
                   </code>
           </pre>
         </div>
-        <transition-wrapper-example />        
+        <div class="my-8">
+          <transition-wrapper-example transition="fade" />
+        </div>
+        
+        <p class="mt-4">
+          To demonstrate the animation I have attached it to a click event, just make sure the conditional sits within the transition wrapper otherwise it will just disappear.
+        </p>   
       </div>
       <div class="mb-8">
+        <h3 class="mb-4 text-lg font-bold">CSS Animation using @keyframes applied to transition classes</h3>
         <p class="my-2">
-          Definitive example of a simple animation both appearing and disappearing, it will still work even with the fade-enter-to and fade-leave-from commented out as opacity by default is 1 so if thats all these 2 classes can be missed. classes can also be combined or nested if using scss, example below assumes vanilla css.
+          <strong>*** assumes css animation knowledge ***</strong> Building on the above, this animation will complete the translateY and opacity by 50% and then perform a wobble with differing x positions up to 100%.
         </p>
-        <p>Using refs:</p>
-        <ul>
-          <li>- Attach a ref to a element i.e ref="root"</li>
-          <li>- Create it in the setup like you would data()</li>
-          <li>- To access the ref add to a watchEffect and append .value to the console.log</li>
-          <li>- flush: 'post' is also required</li>
-        </ul>
-        <div class="my-4">
-          <div class="flex flex-row items-center"> 
-            <div ref="root">This is a root element watched by ref</div>
-          </div>
+        <p class="my-2">
+          To apply a keyframe add the animation tag to the relevant vue transition class as below, also as the keyframe contains all of the information from start/finish/active the animation can be applied just to the enter-active and the other classes can be removed.
+        </p>
+        <div class="my-8">
+          <transition-wrapper-example transition="fade-wobble" />
         </div>
         <div>
           <pre v-highlightjs>
-                  <code class="javascript">
-    // template
-    ref="root"
+                  <code class="html">
+    &lt;style&gt;
 
-    // script
-    const root = ref(null)
+    /* fade-wobble animation */
 
-    watchEffect(() => {
-      console.log(root.value)
-    }, 
-    {
-      flush: 'post'
-    })
+    .fade-wobble-enter-active {
+        animation: wobble 0.5s ease;
+    }
+
+    .fade-wobble-leave-from {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    .fade-wobble-leave-to {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    .fade-wobble-leave-active {
+        transition: all 0.5s ease;
+    }
+
+    @keyframes wobble {
+        
+        /* Starting Point */
+        0% {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        /* Mid point but transform and opacity have completed */
+        50% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Faux wobble by changing the x-axis every 10% but reducing the distance until 0 */
+        60% { transform: translateX(6px); }
+        70% { transform: translateX(-6px); }
+        80% { transform: translateX(3px); }
+        90% { transform: translateX(-3px); }
+        100% { transform: translateX(0); }
+    }
+
+    &lt;/style&gt;
                   </code>
                 </pre>
         </div>  
@@ -146,38 +181,14 @@
 </template>
 
 <script>
-import UserStatus from "../../../components/Basics/UserStatus.vue"
 import PageHeading from '../../../components/Page/PageHeading.vue'
 
 import TransitionWrapperExample from '../../../components/Transitions/TransitionWrapperExample.vue'
 
-import { reactive, ref, watchEffect } from 'vue'
 export default {
   setup() {
-    const root = ref(null)
-    const data = reactive({
-      websiteUrl: 'https://konx.dev',
-      isActive: true,
-      enteredWord: null,
-      refOutput: null,
-      classObject: {
-        'class-object': true,
-        'another-class-object': true,
-      },
-      classArray: ['class-one class-two class-three'],
-    })
-
-    watchEffect(() => {
-        console.log(root.value)
-    },
-    {
-        flush: 'post'
-    })
 
     return {
-      data,
-      root,
-      'user-status' : UserStatus,
       'page-heading' : PageHeading,
       'transition-wrapper-example' : TransitionWrapperExample
     }

@@ -3,8 +3,8 @@
     <div class="nav-block">
       <div
         @click="accordionToggle()"
-        class="transition duration-200 text-sm uppercase relative font-bold cursor-pointer text-white py-3 px-6 text-left hover:bg-red"
-        :class="isExpanded ? 'bg-red' : null"
+        class="transition duration-200 text-sm uppercase relative font-bold cursor-pointer text-white py-3 px-6 text-left hover:bg-green"
+        :class="isExpanded ? 'bg-green' : null"
       >
         Transitions
       </div>
@@ -14,31 +14,40 @@
         :class="isExpanded ? 'visible' : 'hidden'"
       >
         <router-link to="/animation/transitions/transition-wrapper">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            Transition Wrapper
+          <li 
+          @click="navCollapse()"
+          class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
+          >
+            &lt;transition&gt; Wrapper
           </li>
         </router-link>
-        <router-link to="/documentation/plugins/vuex">
+        <router-link to="/animation/transitions/transition-group">
           <li
             @click="navCollapse()"
             class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey"
           >
-            Vuex
+            &lt;transition-group&gt;
           </li>
         </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            Apollo
+        <router-link to="/animation/transitions/router-transitions">
+          <li 
+            @click="navCollapse()"
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+            Router Transitions
           </li>
         </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            Axios
+        <router-link to="/animation/transitions/javascript-hooks">
+          <li
+            @click="navCollapse()" 
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+            JavaScript Hooks
           </li>
         </router-link>
-        <router-link to="/">
-          <li class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
-            Google Analytics
+        <router-link to="/animation/transitions/gsap">
+          <li
+            @click="navCollapse()" 
+            class="nav-block__child text-sm py-2 px-6 cursor-pointer transition duration-200 hover:bg-grey-lighter hover:text-grey">
+            Vue &amp; GSAP
           </li>
         </router-link>
       </ul>

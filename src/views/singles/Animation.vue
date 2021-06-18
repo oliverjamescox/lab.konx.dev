@@ -2,7 +2,7 @@
   <div class="text-grey leading-relaxed container mx-auto bg-white h-full">
     <page-heading
       title="Animation"
-      bg-colour="red"
+      bg-colour="green"
     />
     <div class="flex flex-col flex-wrap md:flex-row justify-evenly items-start p-6 md:p-12 lg:py-12 lg:px-20">
       <section-card :payload="sectionContent.animation" />

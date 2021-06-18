@@ -70,8 +70,24 @@
     "animation": {
         "transitions": {
             "transition-wrapper": {
-                "title": "Transition Wrapper",
+                "title": "<transition> Wrapper",
                 "url": "/animation/transitions/transition-wrapper"
+            },
+            "transition-group": {
+                "title": "<transition-group>",
+                "url": "/animation/transitions/transition-group"
+            },
+            "router-transitions": {
+                "title": "Router Transitions",
+                "url": "/animation/transitions/router-transitions"
+            },
+            "javascript-hooks": {
+                "title": "JavaScript Hooks",
+                "url": "/animation/transitions/javascript-hooks"
+            },
+            "gsap": {
+                "title": "Vue & GSAP",
+                "url": "/animation/transitions/gsap"
             }
         }
     }
