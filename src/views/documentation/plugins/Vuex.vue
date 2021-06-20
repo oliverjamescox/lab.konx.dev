@@ -519,10 +519,10 @@ export default {
       data,
     }
   },
-    components: { 
-      'company-info' : CompanyInfo,
-      'page-heading' : PageHeading 
-    },
+  components: { 
+    'company-info' : CompanyInfo,
+    'page-heading' : PageHeading 
+  },
 }
 </script>
 

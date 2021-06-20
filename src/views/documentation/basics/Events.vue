@@ -234,11 +234,13 @@ export default {
 
     return {
       data,
-      'page-heading' : PageHeading,
       increaseCount,
       handleScroll,
       updateXY
     }
+  },
+  components: {
+    'page-heading' : PageHeading
   }
 }
 </script>

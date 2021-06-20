@@ -17,7 +17,6 @@ import SectionContent from '../../assets/data/content.json'
 import SectionCard from '../../components/Page/SectionCard.vue'
 
 export default {
-  components: { SectionCard },
 
   setup() {
     const data = reactive({
@@ -25,10 +24,12 @@ export default {
 
     return {
       data,
-      'page-heading' : PageHeading,
       'sectionContent' : SectionContent,
-      'section-card' : SectionCard, 
     }
+  },
+  components: {
+    'page-heading' : PageHeading,
+    'section-card' : SectionCard
   }
 }
 

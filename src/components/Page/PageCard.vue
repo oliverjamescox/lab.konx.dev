@@ -43,9 +43,11 @@ export default {
 
         return {
             data,
-            VueLogo,
-        }
-  }
+    }
+    },
+    components: {
+      VueLogo
+    }
 }
 </script>
 <style lang="scss" scoped>

@@ -174,9 +174,12 @@ export default {
     return {
       data,
       root,
+      
+    }
+  },
+  components: {
       'user-status' : UserStatus,
       'page-heading' : PageHeading
-    }
   }
 }
 </script>

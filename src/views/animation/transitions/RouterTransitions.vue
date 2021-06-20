@@ -84,15 +84,15 @@
 <script>
 import PageHeading from '../../../components/Page/PageHeading.vue'
 
-import TransitionWrapperExample from '../../../components/Transitions/TransitionWrapperExample.vue'
-
 export default {
   setup() {
 
     return {
-      'page-heading' : PageHeading,
-      'transition-wrapper-example' : TransitionWrapperExample
+      
     }
+  },
+  components: {
+    'page-heading' : PageHeading
   }
 }
 </script>

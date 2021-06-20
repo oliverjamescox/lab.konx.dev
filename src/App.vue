@@ -6,9 +6,9 @@
     <global-navigation />
     <div class="bg-grey-lighter w-full h-full min-h-screen">
       <div class="">
-          <transition name="route" mode="out-in">
-            <router-view />
-          </transition>
+            <transition name="route" mode="out-in">
+                <router-view />
+            </transition>
       </div>
       <!-- <holding-page></holding-page> -->
       <!-- <button @click="gaTest()">ga test</button> -->
@@ -75,7 +75,7 @@ export default {
     transition: all 0.3s ease-out;
 }
 
-.router-leave-to {
+.route-leave-to {
     opacity: 0;
     transform: translate(-100px);
 }

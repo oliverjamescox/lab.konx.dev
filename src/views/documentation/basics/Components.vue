@@ -123,15 +123,13 @@ import UserBasicSearch from '../../../components/Basics/UserBasicSearch.vue'
 
 
 export default {
-  components: { UserBasicSearch },
+  components: { UserBasicSearch, PageHeading },
   setup() {
     const data = reactive({
     })
 
     return {
-      data,
-      'page-heading' : PageHeading,
-      'user-basic-search' : UserBasicSearch
+      data
     }
   }
 }

@@ -17,7 +17,7 @@ import SectionContent from '../../assets/data/content.json'
 import SectionCard from '../../components/Page/SectionCard.vue'
 
 export default {
-  components: { SectionCard },
+  components: { SectionCard, PageHeading },
 
   setup() {
     const data = reactive({

@@ -186,10 +186,12 @@ export default {
 
     return {
       data,
-      'page-heading' : PageHeading,
-      'child-component' : ChildComponent,
       runFunction
     }
+  },
+  components: {
+    'page-heading' : PageHeading,
+    'child-component' : ChildComponent,
   }
 }
 </script>

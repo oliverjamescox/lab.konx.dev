@@ -189,9 +189,12 @@ export default {
   setup() {
 
     return {
-      'page-heading' : PageHeading,
-      'transition-wrapper-example' : TransitionWrapperExample
+      
     }
+  },
+  components: {
+    'page-heading' : PageHeading,
+    'transition-wrapper-example' : TransitionWrapperExample
   }
 }
 </script>

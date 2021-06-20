@@ -131,9 +131,11 @@ export default {
     })
 
     return {
-      data,
-      'page-heading' : PageHeading,
+      data
     }
+  },
+  components: {
+    'page-heading' : PageHeading
   }
 }
 </script>

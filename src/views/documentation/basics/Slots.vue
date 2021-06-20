@@ -124,7 +124,6 @@
 <script>
 import { reactive } from 'vue'
 import PageHeading from '../../../components/Page/PageHeading.vue'
-import ChildComponent from '../../../components/Basics/ChildComponent.vue'
 import SlotChildComponent from '../../../components/Basics/SlotChildComponent.vue'
 
 export default {
@@ -138,11 +137,12 @@ export default {
 
     return {
       data,
-      'page-heading' : PageHeading,
-      'child-component' : ChildComponent,
-      runFunction,
-      'slot-child-component' : SlotChildComponent,
+      runFunction
     }
+  },
+  components: {
+    'page-heading' : PageHeading,
+    'slot-child-component' : SlotChildComponent
   }
 }
 </script>

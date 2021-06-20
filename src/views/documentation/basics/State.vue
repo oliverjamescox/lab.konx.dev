@@ -54,9 +54,11 @@ export default {
     const data = reactive({
     })
     return {
-      data,
-      'page-heading' : PageHeading 
+      data, 
     }
+  },
+  components: {
+    'page-heading' : PageHeading
   }
 }
 </script>
